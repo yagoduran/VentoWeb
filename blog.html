@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog SEO Negocios España | VENTO</title>
+    <meta name="description" content="Guías SEO por ciudad y sector para negocios en España: reservas, citas y conversión web." />
+    <meta name="keywords" content="blog SEO negocios España, diseño web por ciudad, captación clientes online" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#061a40" />
+    <link rel="canonical" href="https://vento.digital/blog.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{vento:{black:'#061a40',blue:'#4da3ff',white:'#f8fbff'}},fontFamily:{heading:['Playfair Display','serif'],body:['Inter','sans-serif']}}}};</script>
+  </head>
+  <body class="bg-vento-black text-vento-white font-body">
+    <main class="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-16">
+      <div class="flex items-center justify-between"><a href="index.html" class="text-xs text-vento-blue hover:underline">VOLVER A INICIO</a><a href="sectores.html" class="text-xs text-vento-blue hover:underline">VER SECTORES</a></div>
+      <h1 class="mt-6 font-heading text-4xl sm:text-6xl">Blog SEO por ciudad y negocio</h1>
+      <p class="mt-4 max-w-3xl text-vento-white/75">Publicamos contenido orientado a intención de compra: una estructura pensada para captar búsquedas long-tail en España.</p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <select id="city-filter" class="rounded-xl border border-vento-white/20 bg-vento-white/[0.02] px-4 py-3 text-sm">
+          <option value="all">Todas las ciudades</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Barcelona">Barcelona</option>
+          <option value="Valencia">Valencia</option>
+          <option value="Sevilla">Sevilla</option>
+          <option value="Bilbao">Bilbao</option>
+        </select>
+        <select id="sector-filter" class="rounded-xl border border-vento-white/20 bg-vento-white/[0.02] px-4 py-3 text-sm">
+          <option value="all">Todos los sectores</option>
+          <option value="Restaurantes">Restaurantes</option>
+          <option value="Clinicas">Clínicas</option>
+          <option value="Estetica">Estética</option>
+        </select>
+      </div>
+
+      <section id="post-list" class="mt-8 grid gap-4 md:grid-cols-2"></section>
+    </main>
+
+    <script>
+      const posts = [
+        { city: 'Madrid', sector: 'Restaurantes', title: 'Como captar mas reservas con una web para restaurantes en Madrid', url: 'blog/diseno-web-restaurantes-madrid.html' },
+        { city: 'Barcelona', sector: 'Clinicas', title: 'Diseno web para clinicas en Barcelona orientado a citas', url: 'blog/diseno-web-clinicas-barcelona.html' },
+        { city: 'Valencia', sector: 'Estetica', title: 'Web para centros de estetica en Valencia que convierte', url: 'blog/diseno-web-estetica-valencia.html' },
+        { city: 'Sevilla', sector: 'Restaurantes', title: 'Carta digital y reservas para restaurantes en Sevilla', url: 'blog/diseno-web-restaurantes-sevilla.html' },
+        { city: 'Bilbao', sector: 'Clinicas', title: 'Captacion de pacientes con web para clinicas en Bilbao', url: 'blog/diseno-web-clinicas-bilbao.html' },
+        { city: 'Madrid', sector: 'Estetica', title: 'Automatizacion de citas para centros de estetica en Madrid', url: 'blog/diseno-web-estetica-madrid.html' }
+      ];
+
+      const listEl = document.getElementById('post-list');
+      const cityFilter = document.getElementById('city-filter');
+      const sectorFilter = document.getElementById('sector-filter');
+
+      const renderPosts = () => {
+        const city = cityFilter.value;
+        const sector = sectorFilter.value;
+
+        const filtered = posts.filter((post) => {
+          const cityMatch = city === 'all' || post.city === city;
+          const sectorMatch = sector === 'all' || post.sector === sector;
+          return cityMatch && sectorMatch;
+        });
+
+        listEl.innerHTML = filtered
+          .map((post) => `
+            <a href="${post.url}" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/70">
+              <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">${post.city} | ${post.sector}</p>
+              <h2 class="mt-2 font-heading text-2xl">${post.title}</h2>
+            </a>
+          `)
+          .join('');
+      };
+
+      cityFilter.addEventListener('change', renderPosts);
+      sectorFilter.addEventListener('change', renderPosts);
+      renderPosts();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidad | VENTO</title>
+    <meta name="description" content="Política de privacidad de VENTO conforme al RGPD y la normativa española." />
+    <meta name="keywords" content="Privacidad VENTO, RGPD, protección de datos" />
+    <meta name="author" content="VENTO" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#061a40" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              vento: {
+                black: "#061a40",
+                blue: "#4da3ff",
+                white: "#f8fbff"
+              }
+            },
+            fontFamily: {
+              heading: ["Playfair Display", "serif"],
+              body: ["Inter", "sans-serif"]
+            },
+            boxShadow: {
+              glow: "0 0 40px rgba(77, 163, 255, 0.24)"
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" }
+              }
+            },
+            animation: {
+              float: "float 7s ease-in-out infinite"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .grain-bg {
+        background-image: radial-gradient(circle at 1px 1px, rgba(245, 245, 245, 0.05) 1px, transparent 0);
+        background-size: 30px 30px;
+      }
+    </style>
+  </head>
+  <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white">
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-40 left-1/2 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-vento-blue/15 blur-3xl animate-float"></div>
+      <div class="grain-bg absolute inset-0"></div>
+    </div>
+
+    <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+      <a href="index.html" class="inline-flex items-center" aria-label="Volver a inicio">
+        <img src="logo-placeholder.svg" alt="Logo VENTO" class="h-10 w-auto" />
+      </a>
+      <a href="index.html" class="rounded-full border border-vento-blue/70 px-4 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:bg-vento-blue hover:text-vento-white">VOLVER</a>
+    </header>
+
+    <main class="mx-auto w-full max-w-4xl px-5 pb-16 pt-8 sm:px-8 sm:pt-16">
+      <article class="rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+        <h1 class="font-heading text-4xl sm:text-5xl">Política de Privacidad</h1>
+        <p class="mt-4 text-sm leading-relaxed text-vento-white/75">Texto base orientativo para España. Completar campos y revisar con asesoría legal antes de publicar.</p>
+
+        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
+          <h2 class="font-heading text-2xl text-vento-white">1. Responsable del tratamiento</h2>
+          <p>Responsable: [NOMBRE / RAZÓN SOCIAL]</p>
+          <p>NIF/CIF: [NÚMERO]</p>
+          <p>Domicilio: [DIRECCIÓN COMPLETA]</p>
+          <p>Email: ventoagency0@gmail.com</p>
+        </section>
+
+        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
+          <h2 class="font-heading text-2xl text-vento-white">2. Finalidad y legitimación</h2>
+          <p>Los datos se tratan para atender solicitudes de información, gestionar comunicaciones comerciales relacionadas con los servicios y mantener la relación profesional.</p>
+          <p>La base legitimadora es el consentimiento del interesado y, en su caso, la ejecución de una relación precontractual o contractual.</p>
+        </section>
+
+        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
+          <h2 class="font-heading text-2xl text-vento-white">3. Conservación de datos</h2>
+          <p>Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad para la que se recabaron y para atender posibles responsabilidades legales.</p>
+        </section>
+
+        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
+          <h2 class="font-heading text-2xl text-vento-white">4. Destinatarios y transferencias</h2>
+          <p>No se cederán datos a terceros salvo obligación legal o cuando sea necesario para la prestación del servicio con encargados de tratamiento debidamente contratados.</p>
+        </section>
+
+        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
+          <h2 class="font-heading text-2xl text-vento-white">5. Derechos</h2>
+          <p>Puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando una solicitud a ventoagency0@gmail.com, acreditando su identidad.</p>
+          <p>También puede presentar reclamación ante la Agencia Española de Protección de Datos (AEPD).</p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

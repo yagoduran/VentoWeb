@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VENTO | Diseño Web y Automatización para Negocios en España</title>
+    <meta
+      name="description"
+      content="VENTO crea webs y automatizaciones para negocios en toda España: reservas, citas y páginas informativas optimizadas para SEO y conversión."
+    />
+    <meta
+      name="keywords"
+      content="diseño web España, automatización negocios, gestión de reservas online, gestión de citas online, agencia web para restaurantes, páginas informativas para empresas"
+    />
+    <meta name="author" content="VENTO" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#061a40" />
+    <meta name="application-name" content="VENTO" />
+    <meta name="geo.region" content="ES" />
+    <meta name="geo.placename" content="España" />
+    <link rel="canonical" href="https://vento.digital/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="VENTO | Diseño Web y Automatización para Negocios en España" />
+    <meta
+      property="og:description"
+      content="Webs premium y automatización para negocios de toda España: más reservas, más citas y mejor conversión."
+    />
+    <meta property="og:url" content="https://vento.digital/" />
+    <meta property="og:site_name" content="VENTO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VENTO | Diseño Web y Automatización para Negocios en España" />
+    <meta
+      name="twitter:description"
+      content="Diseñamos webs de alto rendimiento y sistemas de automatización para empresas y locales en toda España."
+    />
+    <link rel="icon" type="image/png" href="logoVentoTransparente.png" />
+    <link rel="apple-touch-icon" href="logoVentoTransparente.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Cuando tengas tu ID real de GA4, sustituyelo aqui (por ejemplo G-ABC123XYZ).
+      window.VENTO_GA4_ID = '';
+      if (window.VENTO_GA4_ID) {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${window.VENTO_GA4_ID}`;
+        document.head.appendChild(gaScript);
+        gtag('js', new Date());
+        gtag('config', window.VENTO_GA4_ID, { anonymize_ip: true });
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              vento: {
+                black: "#061a40",
+                blue: "#4da3ff",
+                white: "#f8fbff"
+              }
+            },
+            fontFamily: {
+              heading: ["Playfair Display", "serif"],
+              body: ["Inter", "sans-serif"]
+            },
+            boxShadow: {
+              glow: "0 0 40px rgba(77, 163, 255, 0.24)"
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" }
+              }
+            },
+            animation: {
+              float: "float 7s ease-in-out infinite"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .grain-bg {
+        background-image: radial-gradient(circle at 1px 1px, rgba(245, 245, 245, 0.05) 1px, transparent 0);
+        background-size: 30px 30px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .cookie-hidden {
+        transform: translateY(140%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .cookie-visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .cursor-dot {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 9999px;
+        border: 1px solid rgba(77, 163, 255, 0.85);
+        background: rgba(77, 163, 255, 0.2);
+        pointer-events: none;
+        z-index: 60;
+        transform: translate(-50%, -50%);
+        transition: width 0.18s ease, height 0.18s ease, background 0.18s ease;
+      }
+
+      .cursor-dot.is-hover {
+        width: 26px;
+        height: 26px;
+        background: rgba(77, 163, 255, 0.1);
+      }
+
+      @media (max-width: 767px) {
+        .cursor-dot {
+          display: none;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "VENTO",
+        "url": "https://vento.digital/",
+        "email": "ventoagency0@gmail.com",
+        "areaServed": "ES",
+        "sameAs": ["https://www.instagram.com/agency.vento"],
+        "description": "Agencia especializada en diseño web de alto rendimiento y automatización para negocios en toda España.",
+        "serviceType": [
+          "Diseño web a medida",
+          "Automatización de procesos",
+          "Gestión de reservas",
+          "Gestión de citas",
+          "Páginas informativas"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white">
+    <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-40 left-1/2 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-vento-blue/15 blur-3xl animate-float"></div>
+      <div class="grain-bg absolute inset-0"></div>
+    </div>
+
+    <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8" id="inicio">
+      <a href="#inicio" class="inline-flex items-center" aria-label="Ir al inicio">
+        <img src="logoVentoTransparente.png" alt="Logo VENTO" class="h-20 w-auto sm:h-24" />
+      </a>
+      <nav class="flex items-center gap-2 sm:gap-3" aria-label="Canales de contacto">
+        <a
+          href="https://ig.me/m/agency.vento"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="contact_click"
+          data-track-label="instagram_header"
+          class="inline-flex items-center gap-2 rounded-full border border-vento-blue/70 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:bg-vento-blue hover:text-vento-white"
+          aria-label="Contactar por Instagram"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"></circle>
+          </svg>
+          <span class="hidden sm:inline">INSTAGRAM</span>
+          <span class="sm:hidden">IG</span>
+        </a>
+        <a
+          href="mailto:ventoagency0@gmail.com"
+          data-track="contact_click"
+          data-track-label="email_header"
+          class="inline-flex items-center gap-2 rounded-full border border-vento-white/20 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5"
+          aria-label="Contactar por email"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5l8.475 5.65a1 1 0 001.05 0L21 7.5M4.5 6h15A1.5 1.5 0 0121 7.5v9A1.5 1.5 0 0119.5 18h-15A1.5 1.5 0 013 16.5v-9A1.5 1.5 0 014.5 6z" />
+          </svg>
+          <span class="hidden sm:inline">EMAIL</span>
+          <span class="sm:hidden">MAIL</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="mx-auto max-w-6xl px-5 pb-20 pt-8 sm:px-8 sm:pt-16" aria-labelledby="hero-title">
+        <div class="reveal">
+          <p class="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-vento-blue">Diseño web y automatización premium | Toda España</p>
+          <h1 id="hero-title" class="max-w-4xl font-heading text-4xl leading-tight text-vento-white sm:text-6xl">
+            El nuevo estándar digital para negocios en toda España.
+          </h1>
+          <p class="mt-6 max-w-2xl text-base leading-relaxed text-vento-white/80 sm:text-lg">
+            Diseñamos webs de alto rendimiento con automatización real para locales y empresas: reservas, citas, páginas informativas y embudos de captación. Sin plantillas, sin PDFs, solo código puro.
+          </p>
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="https://ig.me/m/agency.vento"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-track="contact_click"
+              data-track-label="instagram_hero"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-vento-blue px-7 py-3 text-xs font-bold tracking-[0.16em] text-vento-white transition hover:scale-[1.02] hover:shadow-glow focus:outline-none focus-visible:ring-2 focus-visible:ring-vento-white"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+              </svg>
+              CONTACTAR POR INSTAGRAM
+            </a>
+            <a
+              href="mailto:ventoagency0@gmail.com"
+              data-track="contact_click"
+              data-track-label="email_hero"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-vento-white/20 px-7 py-3 text-xs font-bold tracking-[0.14em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-vento-white"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5l8.475 5.65a1 1 0 001.05 0L21 7.5M4.5 6h15A1.5 1.5 0 0121 7.5v9A1.5 1.5 0 0119.5 18h-15A1.5 1.5 0 013 16.5v-9A1.5 1.5 0 014.5 6z" />
+              </svg>
+              ENVIAR EMAIL
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="enemigo" aria-labelledby="enemigo-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <h2 id="enemigo-title" class="font-heading text-3xl text-vento-white sm:text-5xl">Tu carta en PDF está matando tus ventas.</h2>
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <article class="rounded-2xl border border-vento-white/20 bg-vento-white/[0.02] p-5">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-vento-white">El problema del PDF</h3>
+              <ul class="mt-4 space-y-3 text-sm text-vento-white/75 sm:text-base">
+                <li>Legibilidad pobre en móvil y zoom constante.</li>
+                <li>Carga lenta justo cuando el cliente tiene hambre.</li>
+                <li>Impacto SEO nulo, Google no entiende tu carta.</li>
+                <li>Percepción amateur para un restaurante premium.</li>
+              </ul>
+            </article>
+            <article class="rounded-2xl border border-vento-blue/45 bg-vento-blue/10 p-5">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-vento-blue">La solución VENTO</h3>
+              <ul class="mt-4 space-y-3 text-sm text-vento-white sm:text-base">
+                <li>Carga instantánea desde cualquier conexión.</li>
+                <li>Diseño de autor coherente con tu identidad.</li>
+                <li>Arquitectura optimizada para SEO local.</li>
+                <li>Experiencia móvil impecable para convertir más mesas.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="simulador" aria-labelledby="simulador-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Simulador de carga</p>
+          <h2 id="simulador-title" class="mt-2 font-heading text-3xl sm:text-5xl">Vento vs. El Mundo</h2>
+          <p class="mt-4 max-w-3xl text-vento-white/75">
+            El 53% de los clientes abandonan una web si tarda más de 3 segundos en cargar. Vento carga en menos de 0.8s.
+            No pierdas ni una reserva más por culpa de la lentitud.
+          </p>
+          <div class="mt-8 grid gap-6 lg:grid-cols-2">
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5">
+              <label for="legacy-speed" class="text-sm text-vento-white/80">Tiempo actual (WordPress/PDF) en segundos</label>
+              <input id="legacy-speed" type="range" min="1.5" max="6" step="0.1" value="3.8" class="mt-3 w-full accent-[#4da3ff]" />
+              <div class="mt-4 flex items-center justify-between text-sm">
+                <span class="text-vento-white/70">Carga estimada actual</span>
+                <span id="legacy-speed-value" class="font-semibold text-vento-white">3.8s</span>
+              </div>
+              <div class="mt-4 h-3 w-full overflow-hidden rounded-full bg-vento-white/10">
+                <div id="legacy-bar" class="h-full rounded-full bg-vento-white/70 transition-all duration-300" style="width: 63.33%"></div>
+              </div>
+            </article>
+            <article class="rounded-2xl border border-vento-blue/45 bg-vento-blue/10 p-5">
+              <p class="text-sm text-vento-white/80">Carga estimada VENTO</p>
+              <div class="mt-4 flex items-center justify-between text-sm">
+                <span class="text-vento-white/80">Código puro optimizado</span>
+                <span class="font-semibold text-vento-white">0.8s</span>
+              </div>
+              <div class="mt-4 h-3 w-full overflow-hidden rounded-full bg-vento-white/10">
+                <div class="h-full w-[13.33%] rounded-full bg-vento-blue"></div>
+              </div>
+              <p id="abandon-message" class="mt-4 text-sm text-vento-white/90"></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="adios-pdf" aria-labelledby="adios-pdf-title">
+        <div class="reveal">
+          <h2 id="adios-pdf-title" class="font-heading text-3xl sm:text-5xl">Adiós al PDF</h2>
+          <p class="mt-4 max-w-2xl text-vento-white/75">Lo cómodo para el negocio suele ser incómodo para el cliente. Estos son los pecados del PDF.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-xl border border-vento-white/10 bg-vento-white/[0.02] p-5">
+              <p class="text-vento-blue">✕</p>
+              <h3 class="mt-2 font-heading text-2xl">No se lee bien en móvil</h3>
+              <p class="mt-2 text-sm text-vento-white/75">El usuario necesita zoom para entender la carta.</p>
+            </article>
+            <article class="rounded-xl border border-vento-white/10 bg-vento-white/[0.02] p-5">
+              <p class="text-vento-blue">✕</p>
+              <h3 class="mt-2 font-heading text-2xl">Google no entiende tus platos</h3>
+              <p class="mt-2 text-sm text-vento-white/75">El PDF no te posiciona por términos que sí compran.</p>
+            </article>
+            <article class="rounded-xl border border-vento-white/10 bg-vento-white/[0.02] p-5">
+              <p class="text-vento-blue">✕</p>
+              <h3 class="mt-2 font-heading text-2xl">Cada cambio te roba tiempo</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Actualizar precios obliga a resubir archivos una y otra vez.</p>
+            </article>
+            <article class="rounded-xl border border-vento-white/10 bg-vento-white/[0.02] p-5">
+              <p class="text-vento-blue">✕</p>
+              <h3 class="mt-2 font-heading text-2xl">Imagen anticuada</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Tu experiencia digital no representa la calidad del local.</p>
+            </article>
+          </div>
+          <div class="mt-6 rounded-2xl border border-vento-blue/45 bg-vento-blue/10 p-5">
+            <h3 class="font-heading text-2xl">La solución Vento</h3>
+            <p class="mt-2 text-sm text-vento-white/85">Panel ultra-simple para cambiar precios en un clic y diseño responsive que se adapta solo al móvil del cliente.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="adn" aria-labelledby="adn-title">
+        <div class="reveal">
+          <h2 id="adn-title" class="font-heading text-3xl sm:text-5xl">ADN Vento</h2>
+          <p class="mt-4 max-w-2xl text-vento-white/75">La ventaja técnica de trabajar en Código Puro: rendimiento real, posicionamiento y control total.</p>
+          <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-6">
+              <div class="mb-4 h-10 w-10 rounded-full border border-vento-blue/60"></div>
+              <h3 class="font-heading text-2xl">Velocidad &lt; 1 segundo</h3>
+              <p class="mt-2 text-sm leading-relaxed text-vento-white/75">Cada milisegundo cuenta. Una web ligera y optimizada reduce rebote y multiplica conversiones desde móvil.</p>
+            </article>
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-6">
+              <div class="mb-4 h-10 w-10 rounded-full border border-vento-blue/60"></div>
+              <h3 class="font-heading text-2xl">SEO superior a WordPress</h3>
+              <p class="mt-2 text-sm leading-relaxed text-vento-white/75">Arquitectura limpia, sin plugins pesados ni ruido. Google rastrea mejor y te encuentra antes en búsquedas clave en cualquier ciudad.</p>
+            </article>
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-6 sm:col-span-2 lg:col-span-1">
+              <div class="mb-4 h-10 w-10 rounded-full border border-vento-blue/60"></div>
+              <h3 class="font-heading text-2xl">Seguridad total</h3>
+              <p class="mt-2 text-sm leading-relaxed text-vento-white/75">Sin paneles vulnerables ni instalaciones masivas. Menos superficie de ataque y más tranquilidad para tu negocio.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="servicios" aria-labelledby="servicios-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <h2 id="servicios-title" class="font-heading text-3xl sm:text-5xl">Servicios que escalan en toda España</h2>
+          <p class="mt-4 max-w-2xl text-vento-white/75">Implementamos sistemas digitales completos para captar, convertir y gestionar clientes sin fricción.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-xl border border-vento-white/10 p-4">
+              <h3 class="font-heading text-2xl">Webs con automatización</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Conexión de formularios, respuestas automáticas y flujos que ahorran tiempo operativo.</p>
+            </article>
+            <article class="rounded-xl border border-vento-white/10 p-4">
+              <h3 class="font-heading text-2xl">Gestión de reservas</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Sistemas de reserva claros para restaurantes y negocios con alta demanda.</p>
+            </article>
+            <article class="rounded-xl border border-vento-white/10 p-4">
+              <h3 class="font-heading text-2xl">Gestión de citas</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Agenda digital con bloques, recordatorios y control de disponibilidad.</p>
+            </article>
+            <article class="rounded-xl border border-vento-white/10 p-4">
+              <h3 class="font-heading text-2xl">Páginas informativas</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Sitios corporativos orientados a marca, posicionamiento y captación de leads.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="sello-vento" aria-labelledby="sello-vento-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Sello de calidad Vento</p>
+          <h2 id="sello-vento-title" class="mt-2 font-heading text-3xl sm:text-5xl">Atención de proximidad. Estamos en Donosti.</h2>
+          <p class="mt-4 max-w-3xl text-vento-white/80">
+            Si tienes un problema un viernes noche, no hablas con un bot, hablas con Iker y con el equipo Vento.
+            Soporte humano, rápido y con contexto real de hostelería en Gipuzkoa.
+          </p>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="calculadora" aria-labelledby="calculadora-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <h2 id="calculadora-title" class="font-heading text-3xl sm:text-5xl">Calculadora de potencial de mejora</h2>
+          <p class="mt-4 max-w-2xl text-vento-white/75">Introduce tus visitas mensuales de Instagram y estima cuántas reservas o contactos extra puedes conseguir con una web VENTO.</p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <label class="block text-sm sm:col-span-1">
+              <span class="mb-2 block text-vento-white/80">Visitas Instagram / mes</span>
+              <input id="calc-visits" type="number" min="0" value="6000" class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white focus:border-vento-blue/70 focus:outline-none" />
+            </label>
+            <label class="block text-sm sm:col-span-1">
+              <span class="mb-2 block text-vento-white/80">Conversión actual (%)</span>
+              <input id="calc-current" type="number" min="0.1" step="0.1" value="1.2" class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white focus:border-vento-blue/70 focus:outline-none" />
+            </label>
+            <label class="block text-sm sm:col-span-1">
+              <span class="mb-2 block text-vento-white/80">Mejora esperada con Vento (%)</span>
+              <input id="calc-improvement" type="number" min="1" step="1" value="35" class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white focus:border-vento-blue/70 focus:outline-none" />
+            </label>
+          </div>
+          <div class="mt-6 rounded-2xl border border-vento-blue/45 bg-vento-blue/10 p-5">
+            <p id="calc-result" class="text-sm text-vento-white/90"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="sectores" aria-labelledby="sectores-title">
+        <div class="reveal">
+          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 id="sectores-title" class="font-heading text-3xl sm:text-5xl">Soluciones por sector</h2>
+              <p class="mt-3 max-w-2xl text-vento-white/75">Páginas específicas para posicionar por intención real según tipo de negocio.</p>
+            </div>
+            <a href="sectores.html" class="rounded-full border border-vento-blue/70 px-5 py-2 text-xs font-semibold tracking-[0.12em] hover:bg-vento-blue">VER TODOS LOS SECTORES</a>
+          </div>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="servicios-restaurantes.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60 hover:bg-vento-white/[0.04]">
+              <h3 class="font-heading text-2xl">Restaurantes</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Reservas, carta digital y conversión para hostelería.</p>
+            </a>
+            <a href="servicios-clinicas.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60 hover:bg-vento-white/[0.04]">
+              <h3 class="font-heading text-2xl">Clínicas</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Captación y gestión de citas médicas o de salud.</p>
+            </a>
+            <a href="servicios-estetica.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60 hover:bg-vento-white/[0.04]">
+              <h3 class="font-heading text-2xl">Centros de estética</h3>
+              <p class="mt-2 text-sm text-vento-white/75">Agenda digital y venta de tratamientos premium.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="reveal">
+          <h2 id="portfolio-title" class="font-heading text-3xl sm:text-5xl">Portfolio Mockups</h2>
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <article class="parallax-card group relative overflow-hidden rounded-3xl border border-vento-blue/35 p-6">
+              <div class="absolute inset-0 bg-gradient-to-br from-vento-blue/25 via-sky-200/10 to-transparent transition duration-500 group-hover:scale-105"></div>
+              <div class="relative min-h-52">
+                <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Proyecto 01</p>
+                <h3 class="mt-3 font-heading text-3xl">Mendaur Berria</h3>
+                <p class="mt-4 max-w-sm text-sm text-vento-white/75">Web gastronómica minimalista con carta dinámica, storytelling del chef y reservas optimizadas para móvil.</p>
+              </div>
+            </article>
+            <article class="parallax-card group relative overflow-hidden rounded-3xl border border-vento-blue/35 p-6">
+              <div class="absolute inset-0 bg-gradient-to-tl from-vento-blue/25 via-sky-200/10 to-transparent transition duration-500 group-hover:scale-105"></div>
+              <div class="relative min-h-52">
+                <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Proyecto 02</p>
+                <h3 class="mt-3 font-heading text-3xl">Haritz Estudio Gastronómico</h3>
+                <p class="mt-4 max-w-sm text-sm text-vento-white/75">Landing editorial premium para captar eventos privados y elevar posicionamiento de marca local.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="proceso" aria-labelledby="proceso-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <h2 id="proceso-title" class="font-heading text-3xl sm:text-5xl">Nuestro Proceso</h2>
+          <p class="mt-4 text-vento-white/80">Sistema claro, sin fricción: sabes qué ocurre, cuándo y con qué resultado.</p>
+          <ol class="mt-8 grid gap-4 text-sm sm:grid-cols-2 sm:text-base">
+            <li class="rounded-xl border border-vento-white/10 p-4">1. Breve cuestionario</li>
+            <li class="rounded-xl border border-vento-white/10 p-4">2. Boceto inicial gratuito</li>
+            <li class="rounded-xl border border-vento-white/10 p-4">3. Pago 50% señal</li>
+            <li class="rounded-xl border border-vento-white/10 p-4">4. Desarrollo a medida</li>
+            <li class="rounded-xl border border-vento-white/10 p-4 sm:col-span-2">5. Pago final y entrega</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="contacto" aria-labelledby="contacto-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <h2 id="contacto-title" class="font-heading text-3xl sm:text-5xl">Solicita diagnóstico estratégico</h2>
+          <p class="mt-4 max-w-2xl text-vento-white/75">Cuéntanos tu negocio y te enviamos una propuesta inicial orientada a resultados.</p>
+          <form id="lead-form" class="mt-8 grid gap-4 sm:grid-cols-2" novalidate>
+            <label class="block text-sm sm:col-span-1">
+              <span class="mb-2 block text-vento-white/80">Nombre</span>
+              <input type="text" name="nombre" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Tu nombre" />
+            </label>
+            <label class="block text-sm sm:col-span-1">
+              <span class="mb-2 block text-vento-white/80">Email</span>
+              <input type="email" name="email" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="tu@email.com" />
+            </label>
+            <label class="block text-sm sm:col-span-1">
+              <span class="mb-2 block text-vento-white/80">Tipo de negocio</span>
+              <input type="text" name="negocio" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Restaurante, clínica, estudio..." />
+            </label>
+            <label class="block text-sm sm:col-span-1">
+              <span class="mb-2 block text-vento-white/80">Ciudad</span>
+              <input type="text" name="ciudad" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Madrid, Sevilla, Bilbao..." />
+            </label>
+            <label class="block text-sm sm:col-span-2">
+              <span class="mb-2 block text-vento-white/80">Objetivo principal</span>
+              <textarea name="objetivo" rows="4" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Quiero más reservas, automatizar citas, mejorar posicionamiento..."></textarea>
+            </label>
+            <div class="sm:col-span-2">
+              <button type="submit" class="inline-flex items-center justify-center rounded-full bg-vento-blue px-7 py-3 text-xs font-bold tracking-[0.14em] text-vento-white transition hover:shadow-glow">
+                ENVIAR SOLICITUD
+              </button>
+              <p class="mt-3 text-xs text-vento-white/60">Al enviar abriremos tu cliente de correo con la información pre-rellenada.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="blog" aria-labelledby="blog-title">
+        <div class="reveal">
+          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 id="blog-title" class="font-heading text-3xl sm:text-5xl">Blog SEO por ciudad y negocio</h2>
+              <p class="mt-3 max-w-2xl text-vento-white/75">Arquitectura orientada a búsquedas long-tail para atraer clientes con intención de compra.</p>
+            </div>
+            <a href="blog.html" class="rounded-full border border-vento-blue/70 px-5 py-2 text-xs font-semibold tracking-[0.12em] hover:bg-vento-blue">IR AL BLOG</a>
+          </div>
+          <div class="mt-8 grid gap-4 md:grid-cols-2">
+            <a href="blog/diseno-web-restaurantes-madrid.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60">
+              <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">Madrid | Restaurantes</p>
+              <h3 class="mt-2 font-heading text-2xl">Cómo captar más reservas con una web optimizada</h3>
+            </a>
+            <a href="blog/diseno-web-clinicas-barcelona.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60">
+              <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">Barcelona | Clínicas</p>
+              <h3 class="mt-2 font-heading text-2xl">Qué estructura web convierte más citas</h3>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="faq" aria-labelledby="faq-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <h2 id="faq-title" class="font-heading text-3xl sm:text-5xl">FAQ</h2>
+          <p class="mt-4 max-w-2xl text-vento-white/75">Respuestas rápidas sobre plazos, gestión y por qué una carta web supera al PDF.</p>
+          <div class="mt-8 space-y-3" data-faq-list>
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02]">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left" aria-expanded="false">
+                <span class="font-medium text-vento-white">¿En cuánto tiempo se entrega una web VENTO?</span>
+                <span class="text-vento-blue" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel hidden px-5 pb-4 text-sm leading-relaxed text-vento-white/75">
+                El plazo medio está entre 10 y 21 días según alcance. Primero validamos un boceto y después pasamos a desarrollo cerrado por fases.
+              </div>
+            </article>
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02]">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left" aria-expanded="false">
+                <span class="font-medium text-vento-white">¿Quién gestiona los cambios una vez publicada?</span>
+                <span class="text-vento-blue" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel hidden px-5 pb-4 text-sm leading-relaxed text-vento-white/75">
+                Puedes delegarlo en VENTO o gestionar cambios puntuales con un sistema muy simple de solicitudes. No dependes de plugins ni paneles complejos.
+              </div>
+            </article>
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02]">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left" aria-expanded="false">
+                <span class="font-medium text-vento-white">¿Por qué abandonar la carta en PDF?</span>
+                <span class="text-vento-blue" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel hidden px-5 pb-4 text-sm leading-relaxed text-vento-white/75">
+                Porque en móvil penaliza lectura, velocidad y SEO. Una carta web bien construida carga antes, posiciona mejor y transmite una imagen premium.
+              </div>
+            </article>
+            <article class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02]">
+              <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-4 text-left" aria-expanded="false">
+                <span class="font-medium text-vento-white">¿Trabajáis solo para hostelería?</span>
+                <span class="text-vento-blue" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel hidden px-5 pb-4 text-sm leading-relaxed text-vento-white/75">
+                No. Diseñamos y desarrollamos para restaurantes y para cualquier negocio que necesite una web rápida, clara y conectada a procesos de reservas o citas.
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-vento-white/10 px-5 py-10 text-sm text-vento-white/70 sm:px-8">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <section>
+          <h3 class="font-heading text-xl text-vento-white">Info Agencia</h3>
+          <p class="mt-3 leading-relaxed text-vento-white/75">VENTO diseña y desarrolla webs con automatización para negocios de toda España: reservas, citas y páginas informativas enfocadas en conversión.</p>
+          <p class="mt-3">Instagram: <a href="https://www.instagram.com/agency.vento" target="_blank" rel="noopener noreferrer" class="text-vento-blue hover:underline">@agency.vento</a></p>
+          <p class="mt-2">Email: <a href="mailto:ventoagency0@gmail.com" class="text-vento-blue hover:underline">ventoagency0@gmail.com</a></p>
+        </section>
+        <nav aria-label="Enlaces de navegación">
+          <h3 class="font-heading text-xl text-vento-white">Navegación</h3>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#inicio" class="hover:text-vento-blue">Inicio</a></li>
+            <li><a href="#enemigo" class="hover:text-vento-blue">El Enemigo</a></li>
+            <li><a href="#adn" class="hover:text-vento-blue">ADN Vento</a></li>
+            <li><a href="#servicios" class="hover:text-vento-blue">Servicios</a></li>
+            <li><a href="#simulador" class="hover:text-vento-blue">Simulador</a></li>
+            <li><a href="#adios-pdf" class="hover:text-vento-blue">Adiós PDF</a></li>
+            <li><a href="#sello-vento" class="hover:text-vento-blue">Sello Vento</a></li>
+            <li><a href="#calculadora" class="hover:text-vento-blue">Calculadora</a></li>
+            <li><a href="#sectores" class="hover:text-vento-blue">Sectores</a></li>
+            <li><a href="#proceso" class="hover:text-vento-blue">Nuestro Proceso</a></li>
+            <li><a href="#blog" class="hover:text-vento-blue">Blog SEO</a></li>
+            <li><a href="#faq" class="hover:text-vento-blue">FAQ</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Enlaces legales">
+          <h3 class="font-heading text-xl text-vento-white">Legal</h3>
+          <ul class="mt-3 space-y-2">
+            <li><a href="aviso-legal.html" class="hover:text-vento-blue">Aviso Legal</a></li>
+            <li><a href="privacidad.html" class="hover:text-vento-blue">Política de Privacidad</a></li>
+            <li><a href="cookies.html" class="hover:text-vento-blue">Política de Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="mx-auto mt-8 w-full max-w-6xl border-t border-vento-white/10 pt-6 text-center">VENTO - Hecho con pasión en San Sebastián. 2026.</p>
+    </footer>
+
+    <aside
+      id="cookie-banner"
+      class="cookie-hidden fixed bottom-4 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-3xl -translate-x-1/2 rounded-2xl border border-vento-white/10 bg-vento-black/95 p-4 text-sm text-vento-white/85 shadow-glow transition duration-300 sm:p-5"
+      aria-live="polite"
+      aria-label="Aviso de cookies"
+    >
+      <p>
+        Usamos cookies técnicas y de analítica para mejorar tu experiencia. Puedes aceptar o rechazar las cookies no esenciales. Más información en
+        <a href="cookies.html" class="text-vento-blue hover:underline">Política de Cookies</a>.
+      </p>
+      <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:justify-end">
+        <button id="cookie-reject" type="button" class="rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:border-vento-blue/70 hover:bg-vento-white/5">
+          RECHAZAR
+        </button>
+        <button id="cookie-accept" type="button" class="rounded-full bg-vento-blue px-4 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:shadow-glow">
+          ACEPTAR
+        </button>
+      </div>
+    </aside>
+
+    <script>
+      const revealItems = document.querySelectorAll('.reveal');
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        }
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      const trackEvent = (eventName, params = {}) => {
+        if (typeof gtag === 'function') {
+          gtag('event', eventName, params);
+        }
+      };
+
+      document.querySelectorAll('[data-track]').forEach((item) => {
+        item.addEventListener('click', () => {
+          trackEvent(item.dataset.track, {
+            event_category: 'engagement',
+            event_label: item.dataset.trackLabel || 'generic_click'
+          });
+        });
+      });
+
+      const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+      faqTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const panel = trigger.nextElementSibling;
+          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+          const symbol = trigger.querySelector('span:last-child');
+
+          faqTriggers.forEach((otherTrigger) => {
+            const otherPanel = otherTrigger.nextElementSibling;
+            const otherSymbol = otherTrigger.querySelector('span:last-child');
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherPanel.classList.add('hidden');
+            otherSymbol.textContent = '+';
+          });
+
+          if (!isOpen) {
+            trigger.setAttribute('aria-expanded', 'true');
+            panel.classList.remove('hidden');
+            symbol.textContent = '-';
+          }
+        });
+      });
+
+      const cookieBanner = document.getElementById('cookie-banner');
+      const cookieAccept = document.getElementById('cookie-accept');
+      const cookieReject = document.getElementById('cookie-reject');
+      const cookieConsent = localStorage.getItem('vento_cookie_consent');
+
+      if (!cookieConsent) {
+        cookieBanner.classList.remove('cookie-hidden');
+        cookieBanner.classList.add('cookie-visible');
+      }
+
+      const closeCookieBanner = (value) => {
+        trackEvent('cookie_consent', {
+          event_category: 'privacy',
+          event_label: value
+        });
+        localStorage.setItem('vento_cookie_consent', value);
+        cookieBanner.classList.remove('cookie-visible');
+        cookieBanner.classList.add('cookie-hidden');
+      };
+
+      cookieAccept.addEventListener('click', () => closeCookieBanner('accepted'));
+      cookieReject.addEventListener('click', () => closeCookieBanner('rejected'));
+
+      const leadForm = document.getElementById('lead-form');
+
+      const legacySpeed = document.getElementById('legacy-speed');
+      const legacySpeedValue = document.getElementById('legacy-speed-value');
+      const legacyBar = document.getElementById('legacy-bar');
+      const abandonMessage = document.getElementById('abandon-message');
+
+      const renderSpeedSimulator = () => {
+        const currentSpeed = Number(legacySpeed.value);
+        const percent = Math.min((currentSpeed / 6) * 100, 100);
+        const abandonRate = currentSpeed <= 3 ? 20 : Math.min(53 + (currentSpeed - 3) * 10, 89);
+        const saved = Math.max(abandonRate - 12, 8);
+
+        legacySpeedValue.textContent = `${currentSpeed.toFixed(1)}s`;
+        legacyBar.style.width = `${percent}%`;
+        abandonMessage.textContent = `Con ${currentSpeed.toFixed(1)}s podrías perder hasta ${abandonRate.toFixed(0)}% de usuarios impacientes. Con VENTO (~0.8s), recortas abandono y puedes recuperar alrededor de ${saved.toFixed(0)}% de visitas útiles.`;
+      };
+
+      legacySpeed.addEventListener('input', renderSpeedSimulator);
+      renderSpeedSimulator();
+
+      const calcVisits = document.getElementById('calc-visits');
+      const calcCurrent = document.getElementById('calc-current');
+      const calcImprovement = document.getElementById('calc-improvement');
+      const calcResult = document.getElementById('calc-result');
+
+      const renderPotentialCalculator = () => {
+        const visits = Math.max(Number(calcVisits.value) || 0, 0);
+        const currentRate = Math.max(Number(calcCurrent.value) || 0, 0) / 100;
+        const improvementRate = Math.max(Number(calcImprovement.value) || 0, 0) / 100;
+
+        const currentConversions = visits * currentRate;
+        const ventoRate = currentRate * (1 + improvementRate);
+        const ventoConversions = visits * ventoRate;
+        const extra = Math.max(ventoConversions - currentConversions, 0);
+
+        calcResult.textContent = `Hoy convertirías aproximadamente ${Math.round(currentConversions)} contactos/mes. Con una mejora del ${Math.round(improvementRate * 100)}%, podrías llegar a ${Math.round(ventoConversions)} y ganar unos ${Math.round(extra)} contactos extra al mes.`;
+      };
+
+      [calcVisits, calcCurrent, calcImprovement].forEach((el) => {
+        el.addEventListener('input', renderPotentialCalculator);
+      });
+      renderPotentialCalculator();
+
+      const cursorDot = document.getElementById('cursor-dot');
+      let cursorX = window.innerWidth / 2;
+      let cursorY = window.innerHeight / 2;
+      let targetX = cursorX;
+      let targetY = cursorY;
+
+      window.addEventListener('mousemove', (event) => {
+        targetX = event.clientX;
+        targetY = event.clientY;
+      });
+
+      const animateCursor = () => {
+        cursorX += (targetX - cursorX) * 0.22;
+        cursorY += (targetY - cursorY) * 0.22;
+        cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animateCursor);
+      };
+      animateCursor();
+
+      document.querySelectorAll('a, button, input, textarea, .parallax-card').forEach((el) => {
+        el.addEventListener('mouseenter', () => cursorDot.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => cursorDot.classList.remove('is-hover'));
+      });
+
+      document.querySelectorAll('.parallax-card').forEach((card) => {
+        card.addEventListener('mousemove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const rotateY = ((x / rect.width) - 0.5) * 4;
+          const rotateX = ((y / rect.height) - 0.5) * -4;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+      });
+
+      leadForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (!leadForm.checkValidity()) {
+          leadForm.reportValidity();
+          return;
+        }
+
+        const formData = new FormData(leadForm);
+        const nombre = formData.get('nombre');
+        const email = formData.get('email');
+        const negocio = formData.get('negocio');
+        const ciudad = formData.get('ciudad');
+        const objetivo = formData.get('objetivo');
+
+        trackEvent('generate_lead', {
+          event_category: 'conversion',
+          event_label: 'lead_form_submit',
+          lead_city: ciudad,
+          lead_business_type: negocio
+        });
+
+        const subject = encodeURIComponent(`Solicitud VENTO - ${negocio} en ${ciudad}`);
+        const body = encodeURIComponent(
+          `Nombre: ${nombre}\nEmail: ${email}\nNegocio: ${negocio}\nCiudad: ${ciudad}\n\nObjetivo:\n${objetivo}`
+        );
+
+        window.location.href = `mailto:ventoagency0@gmail.com?subject=${subject}&body=${body}`;
+      });
+    </script>
+  </body>
+</html>
