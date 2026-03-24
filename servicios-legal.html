@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,26 +7,74 @@
     <meta name="keywords" content="web despacho abogados, diseño web asesoría, captación consultas legales" />
     <meta name="robots" content="index, follow" /><meta name="theme-color" content="#061a40" />
     <link rel="canonical" href="https://vento.digital/servicios-legal.html" />
-    <link rel="icon" type="image/png" href="logoVentoTransparente.png" />
+        <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Diseño Web para Despachos en España | VENTO" />
+    <meta property="og:description" content="Web para despachos y asesorías con captación de consultas y automatización de solicitudes." />
+    <meta property="og:url" content="https://vento.digital/servicios-legal.html" />
+    <meta property="og:site_name" content="VENTO" />        <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Diseño Web para Despachos en España | VENTO" />
+    <meta name="twitter:description" content="Web para despachos y asesorías con captación de consultas y automatización de solicitudes." />    <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
+<meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+<link rel="icon" type="image/png" href="logoVentoTransparente.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={theme:{extend:{colors:{vento:{black:'#061a40',blue:'#4da3ff',white:'#f8fbff'}},fontFamily:{heading:['Playfair Display','serif'],body:['Inter','sans-serif']}}}};</script>
-  </head>
+      <style>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .skip-link:focus {
+        left: 1rem;
+        top: 1rem;
+        width: auto;
+        height: auto;
+        z-index: 1000;
+        overflow: visible;
+        border-radius: 9999px;
+        background: #4da3ff;
+        color: #061a40;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #4da3ff;
+        outline-offset: 2px;
+      }
+    </style></head>
   <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
       <a href="index.html" class="inline-flex items-center" aria-label="Ir al inicio">
-        <img src="logoVentoTransparente.png" alt="Logo VENTO" class="h-12 w-auto" />
+        <img src="logoVentoTransparente.png" alt="Logo VENTO" class="h-12 w-auto" loading="lazy" decoding="async" />
       </a>
       <nav class="flex items-center gap-2 sm:gap-3" aria-label="Navegacion principal">
         <a href="index.html" class="rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:border-vento-blue/70 hover:bg-vento-white/5">INICIO</a>
-        <a href="sectores.html" class="rounded-full border border-vento-blue/70 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:bg-vento-blue">SECTORES</a>
+        <a href="sectores.html" aria-current="page" class="rounded-full border border-vento-blue/70 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:bg-vento-blue">SECTORES</a>
       </nav>
     </header>
-    <main class="mx-auto max-w-5xl px-5 pb-10 pt-2 sm:px-8 sm:pb-16 sm:pt-6">
+    <main id="main-content" class="mx-auto max-w-5xl px-5 pb-10 pt-2 sm:px-8 sm:pb-16 sm:pt-6">
       <h1 class="mt-4 font-heading text-4xl sm:text-6xl">Diseño web para despachos y asesorías</h1>
       <p class="mt-4 text-vento-white/75">Estrategias de captación de consultas con webs claras, posicionamiento por especialidad y formularios inteligentes.</p>
       <a href="mailto:ventoagency0@gmail.com?subject=Proyecto%20despacho" class="mt-8 inline-flex rounded-full bg-vento-blue px-6 py-3 text-xs font-bold tracking-[0.12em]">PEDIR PROPUESTA</a>
     </main>
   </body>
 </html>
+
+

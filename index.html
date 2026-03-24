@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -28,16 +28,19 @@
     />
     <meta property="og:url" content="https://vento.digital/" />
     <meta property="og:site_name" content="VENTO" />
-    <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="VENTO | Diseño Web y Automatización para Negocios en España" />
     <meta
       name="twitter:description"
       content="Diseñamos webs de alto rendimiento y sistemas de automatización para empresas y locales en toda España."
     />
-    <link rel="icon" type="image/png" href="logoVentoTransparente.png" />
+        <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
+<link rel="icon" type="image/png" href="logoVentoTransparente.png" />
     <link rel="apple-touch-icon" href="logoVentoTransparente.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="vento-i18n.js" defer></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap"
@@ -63,13 +66,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
               vento: {
                 black: "#061a40",
                 blue: "#4da3ff",
-                white: "#f8fbff"
+                white: "#f8fbff",
+                lightBg: "#f8fbff",
+                lightText: "#061a40",
+                lightBorder: "rgba(6, 26, 64, 0.1)"
               }
             },
             fontFamily: {
@@ -77,25 +84,116 @@
               body: ["Inter", "sans-serif"]
             },
             boxShadow: {
-              glow: "0 0 40px rgba(77, 163, 255, 0.24)"
+              glow: "0 0 40px rgba(77, 163, 255, 0.24)",
+              glowLight: "0 0 40px rgba(77, 163, 255, 0.12)"
             },
             keyframes: {
               float: {
                 "0%, 100%": { transform: "translateY(0px)" },
                 "50%": { transform: "translateY(-10px)" }
+              },
+              slideInDown: {
+                "0%": { transform: "translateY(-10px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" }
+              },
+              pulse: {
+                "0%, 100%": { opacity: "1" },
+                "50%": { opacity: "0.5" }
               }
             },
             animation: {
-              float: "float 7s ease-in-out infinite"
+              float: "float 7s ease-in-out infinite",
+              slideInDown: "slideInDown 0.3s ease-out",
+              pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
             }
           }
         }
       };
+      
+      // Detectar y aplicar modo guardado
+      const savedTheme = localStorage.getItem('vento_theme') || 'dark';
+      if (savedTheme === 'light' && !document.documentElement.classList.contains('light')) {
+        document.documentElement.classList.add('light');
+      }
     </script>
     <style>
+      :root {
+        --color-bg: #061a40;
+        --color-text: #f8fbff;
+        --color-border: rgba(248, 251, 255, 0.1);
+        --color-border-strong: rgba(248, 251, 255, 0.2);
+        --color-accent: #4da3ff;
+      }
+      
+      .light {
+        --color-bg: #f8fbff;
+        --color-text: #061a40;
+        --color-border: rgba(6, 26, 64, 0.08);
+        --color-border-strong: rgba(6, 26, 64, 0.15);
+        --color-accent: #0066cc;
+      }
+      
+      .light body {
+        background-color: #f8fbff;
+        color: #061a40;
+      }
+      
+      .light header {
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+      }
+      
+      .light section {
+        color: #061a40;
+      }
+      
+      .light article,
+      .light .rounded-2xl,
+      .light .rounded-3xl {
+        border-color: rgba(6, 26, 64, 0.08);
+      }
+      
+      .light .premium-card:hover {
+        box-shadow: 0 10px 28px rgba(0, 102, 204, 0.12);
+      }
+      
+      .light h1, .light h2, .light h3 {
+        color: #061a40;
+      }
+      
+      .light p, .light span, .light li {
+        color: #061a40;
+      }
+      
+      .light input, .light textarea {
+        background-color: white;
+        border-color: rgba(6, 26, 64, 0.08);
+        color: #061a40;
+      }
+      
+      .light input::placeholder, .light textarea::placeholder {
+        color: rgba(6, 26, 64, 0.4);
+      }
+      
+      .light button {
+        color: #061a40;
+      }
+      
+      .light a {
+        color: #061a40;
+      }
+      
+      .light a:hover {
+        color: #0066cc;
+      }
+
       .grain-bg {
-        background-image: radial-gradient(circle at 1px 1px, rgba(245, 245, 245, 0.03) 1px, transparent 0);
+        background-image: radial-gradient(circle at 1px 1px, rgba(245, 245, 255, 0.03) 1px, transparent 0);
         background-size: 30px 30px;
+      }
+      
+      .light .grain-bg {
+        background-image: radial-gradient(circle at 1px 1px, rgba(6, 26, 64, 0.02) 1px, transparent 0);
       }
 
       .reveal {
@@ -143,6 +241,15 @@
           rgba(77, 163, 255, 0.15)
         );
         transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+      }
+      
+      .light .section-divider-line {
+        background: linear-gradient(
+          90deg,
+          rgba(0, 102, 204, 0.12),
+          rgba(6, 26, 64, 0.15),
+          rgba(0, 102, 204, 0.12)
+        );
       }
 
       .section-divider.is-visible .section-divider-line {
@@ -224,6 +331,98 @@
           display: none;
         }
       }
+      
+      /* Language selector styles */
+      .lang-selector {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      
+      .lang-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        opacity: 0.6;
+        transition: opacity 0.2s ease;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 0.25rem 0.5rem;
+      }
+      
+      .lang-btn.active {
+        opacity: 1;
+      }
+      
+      .lang-btn:hover {
+        opacity: 0.9;
+      }
+      
+      .lang-flag {
+        font-size: 1.2rem;
+        display: inline-block;
+      }
+      
+      /* Theme toggle */
+      .theme-toggle {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(77, 163, 255, 0.5);
+        background: rgba(77, 163, 255, 0.1);
+        transition: all 0.2s ease;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      
+      .light .theme-toggle {
+        border-color: rgba(0, 102, 204, 0.5);
+        background: rgba(0, 102, 204, 0.08);
+      }
+      
+      .theme-toggle:hover {
+        border-color: rgba(77, 163, 255, 0.8);
+        background: rgba(77, 163, 255, 0.15);
+      }
+      
+      .light .theme-toggle:hover {
+        border-color: rgba(0, 102, 204, 0.8);
+        background: rgba(0, 102, 204, 0.15);
+      }
+      
+      .theme-icon {
+        font-size: 0.9rem;
+        display: inline-block;
+      }
+      
+      /* Smooth transitions for theme switching */
+      * {
+        transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      }
+      
+      button, a {
+        transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+      }
+      
+      /* Floating and animation improvements */
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-10px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+      header {
+        animation: slideInDown 0.5s ease-out;
+      }
     </style>
     <script type="application/ld+json">
       {
@@ -244,8 +443,43 @@
         ]
       }
     </script>
-  </head>
-  <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white">
+      <style>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .skip-link:focus {
+        left: 1rem;
+        top: 1rem;
+        width: auto;
+        height: auto;
+        z-index: 1000;
+        overflow: visible;
+        border-radius: 9999px;
+        background: #4da3ff;
+        color: #061a40;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #4da3ff;
+        outline-offset: 2px;
+      }
+    </style></head>
+  <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white transition-colors duration-300">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
     <div class="fixed inset-0 -z-10 overflow-hidden">
       <div class="absolute -top-40 left-1/2 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-vento-blue/15 blur-3xl animate-float"></div>
@@ -255,17 +489,39 @@
     </div>
 
     <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8" id="inicio">
-      <a href="#inicio" class="inline-flex items-center" aria-label="Ir al inicio">
-        <img src="logoVentoTransparente.png" alt="Logo VENTO" class="h-20 w-auto sm:h-24" />
+      <a href="#inicio" class="inline-flex items-center" aria-label="Ir al inicio" aria-current="page">
+        <img src="logoVentoTransparente.png" alt="Logo VENTO" class="h-20 w-auto sm:h-24" loading="lazy" decoding="async" />
       </a>
-      <nav class="flex items-center gap-2 sm:gap-3" aria-label="Canales de contacto">
+      <nav class="flex items-center gap-2 sm:gap-3" aria-label="Controles y navegación">
+        <!-- Idiomas -->
+        <div class="flex items-center gap-1.5 border-r border-vento-white/10 pr-3">
+          <button class="lang-btn active" data-lang="es" aria-label="Cambiar a Español" title="Español">
+            <span class="hidden sm:inline text-xs font-semibold">ES</span>
+            <span class="sm:hidden text-xs">ES</span>
+          </button>
+          <button class="lang-btn" data-lang="eu" aria-label="Cambiar a Euskera" title="Euskera">
+            <span class="hidden sm:inline text-xs font-semibold">EU</span>
+            <span class="sm:hidden text-xs">EU</span>
+          </button>
+          <button class="lang-btn" data-lang="en" aria-label="Change to English" title="English">
+            <span class="hidden sm:inline text-xs font-semibold">EN</span>
+            <span class="sm:hidden text-xs">EN</span>
+          </button>
+        </div>
+        
+        <!-- Tema oscuro/claro -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar a modo claro/oscuro">
+          <span class="theme-icon" id="theme-icon">🌙</span>
+        </button>
+        
+        <!-- Contacto -->
         <a
           href="https://ig.me/m/agency.vento"
           target="_blank"
           rel="noopener noreferrer"
           data-track="contact_click"
           data-track-label="instagram_header"
-          class="inline-flex items-center gap-2 rounded-full border border-vento-blue/70 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:bg-vento-blue hover:text-vento-white"
+          class="inline-flex items-center gap-2 rounded-full border border-vento-blue/70 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:bg-vento-blue hover:text-vento-white light:border-blue-500 light:hover:bg-blue-500"
           aria-label="Contactar por Instagram"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -280,7 +536,7 @@
           href="mailto:ventoagency0@gmail.com"
           data-track="contact_click"
           data-track-label="email_header"
-          class="inline-flex items-center gap-2 rounded-full border border-vento-white/20 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5"
+          class="inline-flex items-center gap-2 rounded-full border border-vento-white/20 px-3 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5 light:border-vento-lightText/20 light:hover:border-blue-500/70"
           aria-label="Contactar por email"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -292,7 +548,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="mx-auto max-w-6xl px-5 pb-20 pt-8 sm:px-8 sm:pt-16" aria-labelledby="hero-title">
         <div class="reveal">
           <p class="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-vento-blue">Diseño web y automatización premium | Toda España</p>
@@ -534,30 +790,6 @@
         </div>
       </section>
 
-      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="portfolio" aria-labelledby="portfolio-title">
-        <div class="reveal">
-          <h2 id="portfolio-title" class="font-heading text-3xl sm:text-5xl">Portfolio Mockups</h2>
-          <div class="mt-8 grid gap-6 md:grid-cols-2">
-            <article class="parallax-card group relative overflow-hidden rounded-3xl border border-vento-blue/35 p-6">
-              <div class="absolute inset-0 bg-gradient-to-br from-vento-blue/25 via-sky-200/10 to-transparent transition duration-500 group-hover:scale-105"></div>
-              <div class="relative min-h-52">
-                <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Proyecto 01</p>
-                <h3 class="mt-3 font-heading text-3xl">Mendaur Berria</h3>
-                <p class="mt-4 max-w-sm text-sm text-vento-white/75">Web gastronómica minimalista con carta dinámica, storytelling del chef y reservas optimizadas para móvil.</p>
-              </div>
-            </article>
-            <article class="parallax-card group relative overflow-hidden rounded-3xl border border-vento-blue/35 p-6">
-              <div class="absolute inset-0 bg-gradient-to-tl from-vento-blue/25 via-sky-200/10 to-transparent transition duration-500 group-hover:scale-105"></div>
-              <div class="relative min-h-52">
-                <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Proyecto 02</p>
-                <h3 class="mt-3 font-heading text-3xl">Gabirondo y Tena Reformas</h3>
-                <p class="mt-4 max-w-sm text-sm text-vento-white/75">Web corporativa premium para captar solicitudes de reforma, mostrar trabajos y convertir visitas en presupuestos reales.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="proceso" aria-labelledby="proceso-title">
         <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
           <h2 id="proceso-title" class="font-heading text-3xl sm:text-5xl">Nuestro Proceso</h2>
@@ -579,23 +811,23 @@
           <form id="lead-form" class="mt-8 grid gap-4 sm:grid-cols-2" novalidate>
             <label class="block text-sm sm:col-span-1">
               <span class="mb-2 block text-vento-white/80">Nombre</span>
-              <input type="text" name="nombre" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Tu nombre" />
+              <input type="text" name="nombre" autocomplete="name" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Tu nombre" />
             </label>
             <label class="block text-sm sm:col-span-1">
               <span class="mb-2 block text-vento-white/80">Email</span>
-              <input type="email" name="email" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="tu@email.com" />
+              <input type="email" name="email" autocomplete="email" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="tu@email.com" />
             </label>
             <label class="block text-sm sm:col-span-1">
               <span class="mb-2 block text-vento-white/80">Tipo de negocio</span>
-              <input type="text" name="negocio" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Restaurante, clínica, estudio..." />
+              <input type="text" name="negocio" autocomplete="organization" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Restaurante, clínica, estudio..." />
             </label>
             <label class="block text-sm sm:col-span-1">
               <span class="mb-2 block text-vento-white/80">Ciudad</span>
-              <input type="text" name="ciudad" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Madrid, Sevilla, Bilbao..." />
+              <input type="text" name="ciudad" autocomplete="address-level2" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Madrid, Sevilla, Bilbao..." />
             </label>
             <label class="block text-sm sm:col-span-2">
               <span class="mb-2 block text-vento-white/80">Objetivo principal</span>
-              <textarea name="objetivo" rows="4" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Quiero más reservas, automatizar citas, mejorar posicionamiento..."></textarea>
+              <textarea name="objetivo" autocomplete="off" rows="4" required class="w-full rounded-xl border border-vento-white/15 bg-vento-white/[0.02] px-4 py-3 text-vento-white placeholder:text-vento-white/40 focus:border-vento-blue/70 focus:outline-none" placeholder="Quiero más reservas, automatizar citas, mejorar posicionamiento..."></textarea>
             </label>
             <div class="sm:col-span-2">
               <button type="submit" class="inline-flex items-center justify-center rounded-full bg-vento-blue px-7 py-3 text-xs font-bold tracking-[0.14em] text-vento-white transition hover:shadow-glow">
@@ -734,7 +966,59 @@
     </aside>
 
     <script>
-      const revealItems = document.querySelectorAll('.reveal');
+      // ==================== THEME MANAGEMENT ====================
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const htmlElement = document.documentElement;
+
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          htmlElement.classList.add('light');
+          document.body.classList.add('light');
+          themeIcon.textContent = '☀️';
+          localStorage.setItem('vento_theme', 'light');
+        } else {
+          htmlElement.classList.remove('light');
+          document.body.classList.remove('light');
+          themeIcon.textContent = '🌙';
+          localStorage.setItem('vento_theme', 'dark');
+        }
+      }
+
+      const initialTheme = localStorage.getItem('vento_theme') || 'dark';
+      applyTheme(initialTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.classList.contains('light') ? 'light' : 'dark';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
+      });
+
+      // ==================== LANGUAGE MANAGEMENT ====================
+      let currentLanguage = localStorage.getItem('vento_lang') || 'es';
+
+      function setLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('vento_lang', lang);
+        document.documentElement.lang = lang;
+        
+        // Update active state of language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+      }
+
+      // Language button listeners
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setLanguage(btn.dataset.lang);
+        });
+      });
+
+      // Initialize language on page load
+      setLanguage(currentLanguage);
+
+      // ==================== REST OF ORIGINAL SCRIPTS ====================
 
       const revealObserver = new IntersectionObserver(
         (entries) => {
@@ -987,3 +1271,5 @@
     </script>
   </body>
 </html>
+
+
