@@ -9,82 +9,85 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#061a40" />
     <link rel="canonical" href="https://vento.digital/servicios-restaurantes.html" />
-        <meta property="og:type" content="website" />
+    <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content="Diseño Web para Restaurantes en España | VENTO" />
     <meta property="og:description" content="Webs para restaurantes en toda España con reservas, carta digital y SEO local para llenar mesas." />
     <meta property="og:url" content="https://vento.digital/servicios-restaurantes.html" />
-    <meta property="og:site_name" content="VENTO" />        <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Diseño Web para Restaurantes en España | VENTO" />
-    <meta name="twitter:description" content="Webs para restaurantes en toda España con reservas, carta digital y SEO local para llenar mesas." />    <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
-<meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
+    <meta property="og:site_name" content="VENTO" />
+    <meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-<link rel="icon" type="image/png" href="logoVentoTransparente.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Diseño Web para Restaurantes en España | VENTO" />
+    <meta name="twitter:description" content="Webs para restaurantes en toda España con reservas, carta digital y SEO local para llenar mesas." />
+    <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
+    <link rel="icon" type="image/png" href="logoVentoTransparente.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{colors:{vento:{black:'#061a40',blue:'#4da3ff',white:'#f8fbff'}},fontFamily:{heading:['Playfair Display','serif'],body:['Inter','sans-serif']}}}};</script>
-      <style>
-      .skip-link {
-        position: absolute;
-        left: -9999px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-
-      .skip-link:focus {
-        left: 1rem;
-        top: 1rem;
-        width: auto;
-        height: auto;
-        z-index: 1000;
-        overflow: visible;
-        border-radius: 9999px;
-        background: #4da3ff;
-        color: #061a40;
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-      }
-
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible,
-      select:focus-visible,
-      textarea:focus-visible {
-        outline: 2px solid #4da3ff;
-        outline-offset: 2px;
-      }
+    <script>
+      tailwind.config = { theme: { extend: { colors: { vento: { black: '#061a40', blue: '#4da3ff', white: '#f8fbff' } }, fontFamily: { heading: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] } } } };
+    </script>
+    <style>
+      .skip-link { position:absolute; left:-9999px; }
+      .skip-link:focus { left:1rem; top:1rem; z-index:1000; background:#4da3ff; color:#061a40; padding:.5rem 1rem; border-radius:9999px; }
+      .panel { border:1px solid rgba(248,251,255,.14); background:linear-gradient(140deg, rgba(248,251,255,.08), rgba(248,251,255,.02)); backdrop-filter: blur(12px); }
+      .orbs { background-image: radial-gradient(circle at 1px 1px, rgba(248,251,255,.08) 1px, transparent 0); background-size: 26px 26px; }
+      .lift { transition: transform .25s ease, border-color .25s ease; }
+      .lift:hover { transform: translateY(-3px); border-color: rgba(77,163,255,.75); }
     </style>
   </head>
-  <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white">
+  <body class="bg-vento-black text-vento-white font-body antialiased">
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-    <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
-      <a href="index.html" class="inline-flex items-center" aria-label="Ir al inicio">
-        <img src="logoVentoTransparente.png" alt="Logo VENTO" class="h-12 w-auto" loading="lazy" decoding="async" />
-      </a>
-      <nav class="flex items-center gap-2 sm:gap-3" aria-label="Navegacion principal">
-        <a href="index.html" class="rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:border-vento-blue/70 hover:bg-vento-white/5">INICIO</a>
-        <a href="sectores.html" aria-current="page" class="rounded-full border border-vento-blue/70 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:bg-vento-blue">SECTORES</a>
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-36 left-1/2 h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-vento-blue/20 blur-3xl"></div>
+      <div class="absolute bottom-[-6rem] right-[-4rem] h-[18rem] w-[18rem] rounded-full bg-vento-blue/10 blur-3xl"></div>
+      <div class="orbs absolute inset-0"></div>
+    </div>
+
+    <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-6 sm:px-8">
+      <a href="index.html" class="inline-flex items-center" aria-label="Ir al inicio"><img src="logoVentoTransparente.png" alt="Logo VENTO" class="h-12 w-auto" /></a>
+      <nav class="flex items-center gap-2">
+        <a href="index.html" class="rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em]">INICIO</a>
+        <a href="sectores.html" class="rounded-full border border-vento-blue/70 px-4 py-2 text-xs font-semibold tracking-[0.08em]">SECTORES</a>
       </nav>
     </header>
-    <main id="main-content" class="mx-auto max-w-5xl px-5 pb-10 pt-2 sm:px-8 sm:pb-16 sm:pt-6">
-      <h1 class="mt-4 font-heading text-4xl sm:text-6xl">Diseño web para restaurantes en toda España</h1>
-      <p class="mt-4 text-vento-white/75">Creamos webs para restaurantes con carga rápida, carta digital sin PDF y sistema de reservas conectado a tus canales de captación.</p>
-      <section class="mt-8 grid gap-4 sm:grid-cols-3">
-        <article class="rounded-xl border border-vento-white/10 p-4"><h2 class="font-heading text-2xl">Más reservas</h2><p class="mt-2 text-sm text-vento-white/75">Botones de reserva visibles y rutas optimizadas para móvil.</p></article>
-        <article class="rounded-xl border border-vento-white/10 p-4"><h2 class="font-heading text-2xl">SEO local</h2><p class="mt-2 text-sm text-vento-white/75">Contenido pensado para búsquedas por barrio y tipo de cocina.</p></article>
-        <article class="rounded-xl border border-vento-white/10 p-4"><h2 class="font-heading text-2xl">Automatización</h2><p class="mt-2 text-sm text-vento-white/75">Recordatorios y respuestas para reducir cancelaciones.</p></article>
+
+    <main id="main-content" class="mx-auto max-w-6xl px-5 pb-20 sm:px-8">
+      <section class="panel rounded-3xl p-7 sm:p-11">
+        <p class="text-xs uppercase tracking-[0.17em] text-vento-blue">Especialización hostelería</p>
+        <h1 class="mt-3 font-heading text-4xl sm:text-6xl">Web para restaurantes que llena mesas</h1>
+        <p class="mt-5 max-w-3xl text-vento-white/80">Transformamos la experiencia digital de tu restaurante: carta sin PDF, reservas fluidas y recordatorios automáticos para reducir no-shows.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="mailto:ventoagency0@gmail.com?subject=Proyecto%20restaurante" class="rounded-full bg-vento-blue px-6 py-3 text-xs font-bold tracking-[0.12em]">QUIERO PROPUESTA</a>
+          <a href="#demo-restaurante" class="rounded-full border border-vento-white/20 px-6 py-3 text-xs font-bold tracking-[0.12em]">VER DEMO</a>
+        </div>
       </section>
-      <a href="mailto:ventoagency0@gmail.com?subject=Proyecto%20restaurante" class="mt-8 inline-flex rounded-full bg-vento-blue px-6 py-3 text-xs font-bold tracking-[0.12em]">PEDIR PROPUESTA</a>
+
+      <section class="mt-10 grid gap-4 md:grid-cols-3">
+        <article class="lift rounded-2xl border border-vento-white/12 bg-vento-white/[0.03] p-5"><p class="text-xs uppercase tracking-[0.1em] text-vento-white/70">Conversión</p><h2 class="mt-2 font-heading text-2xl">Más reservas directas</h2><p class="mt-2 text-sm text-vento-white/75">Rutas claras para reservar desde Instagram y Google.</p></article>
+        <article class="lift rounded-2xl border border-vento-white/12 bg-vento-white/[0.03] p-5"><p class="text-xs uppercase tracking-[0.1em] text-vento-white/70">Operativa</p><h2 class="mt-2 font-heading text-2xl">Menos cancelaciones</h2><p class="mt-2 text-sm text-vento-white/75">Recordatorios y reconfirmación automática previa al servicio.</p></article>
+        <article class="lift rounded-2xl border border-vento-white/12 bg-vento-white/[0.03] p-5"><p class="text-xs uppercase tracking-[0.1em] text-vento-white/70">SEO local</p><h2 class="mt-2 font-heading text-2xl">Más visibilidad</h2><p class="mt-2 text-sm text-vento-white/75">Posicionamiento por cocina, barrio y ciudad para captar demanda real.</p></article>
+      </section>
+
+      <section id="demo-restaurante" class="mt-10 panel rounded-3xl p-7 sm:p-10">
+        <h2 class="font-heading text-3xl sm:text-5xl">Flujo ideal del cliente</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-4">
+          <article class="rounded-xl border border-vento-white/12 bg-vento-white/[0.03] p-4"><p class="text-xs text-vento-blue">01</p><p class="mt-2 text-sm">Ve tu carta web desde Instagram.</p></article>
+          <article class="rounded-xl border border-vento-white/12 bg-vento-white/[0.03] p-4"><p class="text-xs text-vento-blue">02</p><p class="mt-2 text-sm">Selecciona mesa, hora y comensales.</p></article>
+          <article class="rounded-xl border border-vento-white/12 bg-vento-white/[0.03] p-4"><p class="text-xs text-vento-blue">03</p><p class="mt-2 text-sm">Recibe confirmación inmediata por WhatsApp.</p></article>
+          <article class="rounded-xl border border-vento-white/12 bg-vento-white/[0.03] p-4"><p class="text-xs text-vento-blue">04</p><p class="mt-2 text-sm">Recordatorio automático horas antes.</p></article>
+        </div>
+      </section>
+
+      <section class="mt-10 rounded-3xl border border-vento-blue/45 bg-vento-blue/10 p-7 sm:p-10">
+        <h2 class="font-heading text-3xl">¿Tu carta sigue en PDF?</h2>
+        <p class="mt-3 max-w-2xl text-sm text-vento-white/85">Podemos convertirla en una experiencia web premium en días, sin perder tu identidad y con carga rápida real.</p>
+        <a href="mailto:ventoagency0@gmail.com?subject=Diagnostico%20restaurante" class="mt-6 inline-flex rounded-full border border-vento-white/25 px-6 py-3 text-xs font-bold tracking-[0.12em]">SOLICITAR DIAGNÓSTICO</a>
+      </section>
     </main>
-      <script src="page-transition.js" defer></script>
+    <script src="page-transition.js" defer></script>
   </body>
 </html>
-
-

@@ -186,6 +186,16 @@
         color: #0066cc;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
       .grain-bg {
         background-image: radial-gradient(circle at 1px 1px, rgba(245, 245, 255, 0.03) 1px, transparent 0);
         background-size: 30px 30px;
@@ -318,23 +328,23 @@
         color: #0066cc;
       }
 
-      .light #cookie-banner #cookie-reject {
+      .light #cookie-banner .cookie-secondary {
         color: #061a40;
         border-color: rgba(6, 26, 64, 0.25);
         background: rgba(255, 255, 255, 0.95);
       }
 
-      .light #cookie-banner #cookie-reject:hover {
+      .light #cookie-banner .cookie-secondary:hover {
         border-color: rgba(0, 102, 204, 0.5);
         background: rgba(0, 102, 204, 0.08);
       }
 
-      .light #cookie-banner #cookie-accept {
+      .light #cookie-banner .cookie-primary {
         color: #f8fbff;
         background: #0066cc;
       }
 
-      .light #cookie-banner #cookie-accept:hover {
+      .light #cookie-banner .cookie-primary:hover {
         background: #0058b3;
       }
 
@@ -507,6 +517,153 @@
       .light .promo-ticker-segment,
       .light .promo-ticker-separator {
         color: #061a40;
+      }
+
+      .reservation-stage {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(77, 163, 255, 0.35);
+        background:
+          radial-gradient(circle at 12% 15%, rgba(77, 163, 255, 0.22), transparent 38%),
+          radial-gradient(circle at 88% 84%, rgba(248, 251, 255, 0.09), transparent 42%),
+          linear-gradient(145deg, rgba(5, 24, 58, 0.92), rgba(8, 32, 72, 0.72));
+        box-shadow: 0 22px 50px rgba(4, 20, 50, 0.35);
+      }
+
+      .light .reservation-stage {
+        border-color: rgba(0, 102, 204, 0.28);
+        background:
+          radial-gradient(circle at 10% 10%, rgba(77, 163, 255, 0.22), transparent 40%),
+          radial-gradient(circle at 90% 90%, rgba(6, 26, 64, 0.06), transparent 42%),
+          linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(235, 246, 255, 0.92));
+        box-shadow: 0 20px 45px rgba(0, 86, 172, 0.16);
+      }
+
+      .reservation-stage::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(77, 163, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(77, 163, 255, 0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .light .reservation-stage::before {
+        background-image:
+          linear-gradient(rgba(0, 102, 204, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 102, 204, 0.08) 1px, transparent 1px);
+      }
+
+      .reservation-chip {
+        border: 1px solid rgba(248, 251, 255, 0.14);
+        background: rgba(248, 251, 255, 0.06);
+        color: rgba(248, 251, 255, 0.88);
+      }
+
+      .reservation-chip.active {
+        border-color: rgba(77, 163, 255, 0.88);
+        background: rgba(77, 163, 255, 0.24);
+        color: #f8fbff;
+      }
+
+      .light .reservation-chip {
+        border-color: rgba(6, 26, 64, 0.14);
+        background: rgba(255, 255, 255, 0.8);
+        color: rgba(6, 26, 64, 0.86);
+      }
+
+      .light .reservation-chip.active {
+        border-color: rgba(0, 102, 204, 0.7);
+        background: rgba(0, 102, 204, 0.12);
+        color: #0058b3;
+      }
+
+      .reservation-item {
+        border: 1px solid rgba(248, 251, 255, 0.12);
+        background: rgba(248, 251, 255, 0.04);
+      }
+
+      .light .reservation-item {
+        border-color: rgba(6, 26, 64, 0.12);
+        background: rgba(255, 255, 255, 0.84);
+      }
+
+      .reservation-badge {
+        border: 1px solid transparent;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.22rem 0.5rem;
+        border-radius: 9999px;
+      }
+
+      .reservation-badge.confirmed {
+        border-color: rgba(65, 194, 128, 0.55);
+        background: rgba(65, 194, 128, 0.16);
+        color: #8ff3ba;
+      }
+
+      .reservation-badge.waiting {
+        border-color: rgba(255, 186, 71, 0.55);
+        background: rgba(255, 186, 71, 0.16);
+        color: #ffd18a;
+      }
+
+      .reservation-badge.cancelled {
+        border-color: rgba(255, 119, 119, 0.45);
+        background: rgba(255, 119, 119, 0.14);
+        color: #ffc1c1;
+      }
+
+      .light .reservation-badge.confirmed {
+        border-color: rgba(14, 140, 78, 0.4);
+        background: rgba(14, 140, 78, 0.11);
+        color: #0a8f4e;
+      }
+
+      .light .reservation-badge.waiting {
+        border-color: rgba(189, 111, 0, 0.4);
+        background: rgba(189, 111, 0, 0.1);
+        color: #a36200;
+      }
+
+      .light .reservation-badge.cancelled {
+        border-color: rgba(174, 43, 43, 0.38);
+        background: rgba(174, 43, 43, 0.09);
+        color: #9d2121;
+      }
+
+      .reservation-item[data-status='waiting'] {
+        border-color: rgba(255, 186, 71, 0.42);
+      }
+
+      .reservation-item[data-status='confirmed'] {
+        border-color: rgba(65, 194, 128, 0.38);
+      }
+
+      .reservation-item[data-status='cancelled'] {
+        border-color: rgba(255, 119, 119, 0.35);
+      }
+
+      .light .reservation-action {
+        color: #061a40;
+      }
+
+      .light .reservation-action[data-action='confirm'] {
+        border-color: rgba(14, 140, 78, 0.38);
+        background: rgba(14, 140, 78, 0.1);
+      }
+
+      .light .reservation-action[data-action='cancel'] {
+        border-color: rgba(174, 43, 43, 0.34);
+        background: rgba(174, 43, 43, 0.08);
+      }
+
+      .reservation-item.is-hidden {
+        display: none;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -686,6 +843,13 @@
           <p data-i18n="heroSubtitle" class="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-vento-blue">Premium web diseinua eta automatizazioa | Espainia osoa</p>
           <h1 id="hero-title" data-i18n="heroTitle" data-hero-stagger="true" class="max-w-4xl font-heading text-4xl leading-tight text-vento-white [word-break:normal] [overflow-wrap:normal] [hyphens:none] sm:text-6xl">Espainia osoko enpresen estandar digital berria.</h1>
           <p data-i18n="heroDescription" class="mt-6 max-w-2xl text-base leading-relaxed text-vento-white/80 sm:text-lg">Errendimendu handiko webguneak diseinatzen ditugu aretoetarako eta enpresentzako benetako automatizazioarekin: erreserbak, hitzorduak, informazio orriak eta kontratazio-inbutuak. Ez txantiloirik, ez PDFrik, kode hutsa besterik ez.</p>
+          <nav class="mt-7 flex flex-wrap gap-2" aria-label="Atal nagusietarako sarbide azkarra">
+            <a href="#demo-reservas" class="rounded-full border border-vento-blue/70 bg-vento-blue/12 px-4 py-2 text-[0.68rem] font-semibold tracking-[0.09em] text-vento-white transition hover:bg-vento-blue/25">ERRESERBEN KUDEAKETA</a>
+            <a href="#adios-pdf" class="rounded-full border border-vento-white/20 px-4 py-2 text-[0.68rem] font-semibold tracking-[0.09em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5">ZURE PDF</a>
+            <a href="#calculadora" class="rounded-full border border-vento-white/20 px-4 py-2 text-[0.68rem] font-semibold tracking-[0.09em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5">POTENTZIAL KALKULAGAILUA</a>
+            <a href="#contacto" class="rounded-full border border-vento-white/20 px-4 py-2 text-[0.68rem] font-semibold tracking-[0.09em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5">KONTAKTUA</a>
+            <a href="#faq" class="rounded-full border border-vento-white/20 px-4 py-2 text-[0.68rem] font-semibold tracking-[0.09em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5">FAQ</a>
+          </nav>
           <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="https://ig.me/m/agency.vento"
@@ -741,6 +905,175 @@
             </article>
           </div>
         </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="demo-reservas" aria-labelledby="demo-reservas-title">
+        <div class="reveal reservation-stage rounded-3xl p-6 sm:p-10">
+          <div class="grid gap-8 lg:grid-cols-[1fr,1.2fr] lg:items-start">
+            <div>
+              <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Sistemaren benetako ikuspegia</p>
+              <h2 id="demo-reservas-title" class="mt-2 font-heading text-3xl text-vento-white sm:text-5xl">Horrela ikusiko zenuke zure erreserben kudeaketa</h2>
+              <p class="mt-4 max-w-lg text-vento-white/80">
+                Zure taldeak zerbitzu osoa panel bakarretik ikus dezake: baieztatuak, zain daudenak eta ezeztatuak,
+                segundo gutxitan erantzuteko ekintza azkarrekin.
+              </p>
+              <div class="mt-6 grid gap-3 sm:grid-cols-3">
+                <article class="rounded-xl border border-vento-white/15 bg-vento-white/[0.04] p-4">
+                  <p class="text-[0.7rem] uppercase tracking-[0.12em] text-vento-white/70">Gaur</p>
+                  <p class="mt-2 text-2xl font-semibold text-vento-white" data-res-counter="total">14</p>
+                  <p class="text-xs text-vento-white/65">Erreserba guztira</p>
+                </article>
+                <article class="rounded-xl border border-vento-white/15 bg-vento-white/[0.04] p-4">
+                  <p class="text-[0.7rem] uppercase tracking-[0.12em] text-vento-white/70">Baieztatuak</p>
+                  <p class="mt-2 text-2xl font-semibold text-vento-white" data-res-counter="confirmed">9</p>
+                  <p class="text-xs text-vento-white/65">Zerbitzurako prest</p>
+                </article>
+                <article class="rounded-xl border border-vento-white/15 bg-vento-white/[0.04] p-4">
+                  <p class="text-[0.7rem] uppercase tracking-[0.12em] text-vento-white/70">Zain</p>
+                  <p class="mt-2 text-2xl font-semibold text-vento-white" data-res-counter="waiting">4</p>
+                  <p class="text-xs text-vento-white/65">Baieztapenaren zain</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="relative z-10 rounded-2xl border border-vento-white/15 bg-vento-black/50 p-4 backdrop-blur-md sm:p-5 light:bg-white/80">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <h3 class="font-heading text-2xl text-vento-white light:text-vento-lightText">Areto panela</h3>
+                <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Erreserben iragazkia" id="reservation-filters">
+                  <button type="button" class="reservation-chip active rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.08em]" data-filter="all">Denak</button>
+                  <button type="button" class="reservation-chip rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.08em]" data-filter="waiting">Zain</button>
+                  <button type="button" class="reservation-chip rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.08em]" data-filter="confirmed">Baieztatuak</button>
+                  <button type="button" class="reservation-chip rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.08em]" data-filter="cancelled">Ezeztatuak</button>
+                </div>
+              </div>
+
+              <div class="mt-4 flex flex-wrap items-center gap-2" id="reservation-quick-actions" aria-label="Panelaren ekintza azkarrak">
+                <button type="button" class="reservation-inline-action rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em]" data-panel-action="checkin">Iritsiera erregistratu</button>
+                <button type="button" class="reservation-inline-action rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em]" data-panel-action="reminder">Oroigarria bidali</button>
+                <button type="button" class="reservation-inline-action rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em]" data-panel-action="reassign">Mahaia berriz esleitu</button>
+              </div>
+              <p id="reservation-action-feedback" class="mt-2 text-xs text-vento-white/70 light:text-vento-lightText/70">Tip: erreserba bakoitzean jardun dezakezu edo txanda osorako ekintza azkarrak erabili.</p>
+
+              <div class="mt-4 space-y-3" id="reservation-list">
+                <article class="reservation-item rounded-xl p-4" data-status="waiting">
+                  <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p class="text-sm font-semibold text-vento-white light:text-vento-lightText">20:30 | 4. mahaia - Laura M.</p>
+                      <p class="mt-1 text-xs text-vento-white/70 light:text-vento-lightText/70">Titularra: Laura Martinez · Mahaikideak: 4 · Terraza estalia</p>
+                    </div>
+                    <span class="reservation-badge waiting">Zain</span>
+                  </div>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <button type="button" class="reservation-action rounded-full border border-emerald-300/40 bg-emerald-400/15 px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-emerald-100 transition hover:bg-emerald-300/25" data-action="confirm">Baieztatu</button>
+                    <button type="button" class="reservation-action rounded-full border border-rose-300/35 bg-rose-400/12 px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-rose-100 transition hover:bg-rose-300/22" data-action="cancel">Ezeztatu</button>
+                    <button type="button" class="reservation-inline-action rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em]" data-panel-action="whatsapp">WhatsApp</button>
+                    <button type="button" class="reservation-inline-action rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em]" data-panel-action="edit">Editatu</button>
+                  </div>
+                </article>
+
+                <article class="reservation-item rounded-xl p-4" data-status="confirmed">
+                  <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p class="text-sm font-semibold text-vento-white light:text-vento-lightText">21:00 | 7. mahaia - Arriaga taldea</p>
+                      <p class="mt-1 text-xs text-vento-white/70 light:text-vento-lightText/70">Titularra: Nerea Arriaga · Mahaikideak: 6 · Barrualdea</p>
+                    </div>
+                    <span class="reservation-badge confirmed">Baieztatua</span>
+                  </div>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <button type="button" class="reservation-inline-action rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em]" data-panel-action="checkin">Check-in</button>
+                    <button type="button" class="reservation-inline-action rounded-full px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em]" data-panel-action="call">Deitu</button>
+                  </div>
+                </article>
+
+                <article class="reservation-item rounded-xl p-4" data-status="confirmed">
+                  <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p class="text-sm font-semibold text-vento-white light:text-vento-lightText">21:30 | Barra - Daniel R.</p>
+                      <p class="mt-1 text-xs text-vento-white/70 light:text-vento-lightText/70">Titularra: Daniel Ruiz · Mahaikideak: 2 · Barra</p>
+                    </div>
+                    <span class="reservation-badge confirmed">Baieztatua</span>
+                  </div>
+                </article>
+
+                <article class="reservation-item rounded-xl p-4" data-status="cancelled">
+                  <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p class="text-sm font-semibold text-vento-white light:text-vento-lightText">22:00 | 2. mahaia - Unai G.</p>
+                      <p class="mt-1 text-xs text-vento-white/70 light:text-vento-lightText/70">Titularra: Unai Gomez · Mahaikideak: 3 · Bezeroak ezeztatua</p>
+                    </div>
+                    <span class="reservation-badge cancelled">Ezeztatua</span>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="vista-cliente" aria-labelledby="vista-cliente-title">
+        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
+          <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Bezeroaren esperientzia</p>
+          <h2 id="vista-cliente-title" class="mt-2 font-heading text-3xl sm:text-5xl">Horrela ikusiko lukete zure bezeroek erreserba</h2>
+          <p class="mt-4 max-w-3xl text-vento-white/80">
+            Barne panelaz gain, bezeroarentzat fluxu argia diseinatzen dugu: pauso gutxi, ordutegi ikusgarria eta baieztapen azkarra.
+            Marruskadura gutxiago, amaitutako erreserba gehiago.
+          </p>
+          <div class="mt-8 grid gap-6 lg:grid-cols-2">
+            <article class="rounded-2xl border border-vento-white/12 bg-vento-black/40 p-5 light:bg-white/80">
+              <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">Mugikorreko ikuspegia</p>
+              <div class="mt-4 rounded-2xl border border-vento-white/10 bg-vento-white/[0.04] p-4">
+                <p class="text-sm font-semibold text-vento-white light:text-vento-lightText">Erreserbatu zure mahaia 20 segundotan</p>
+                <div class="mt-3 rounded-xl border border-vento-white/12 bg-vento-black/35 px-3 py-2 text-xs light:bg-white/90">
+                  <p class="text-vento-white/75 light:text-vento-lightText/75">Izen-abizenak (nahitaezkoa)</p>
+                  <p class="mt-1 font-semibold text-vento-white light:text-vento-lightText">Ane Ruiz</p>
+                </div>
+                <div class="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
+                  <span class="rounded-lg border border-vento-blue/45 bg-vento-blue/15 px-2 py-2 text-vento-white">Gaur</span>
+                  <span class="rounded-lg border border-vento-white/15 px-2 py-2 text-vento-white/80">Bihar</span>
+                  <span class="rounded-lg border border-vento-white/15 px-2 py-2 text-vento-white/80">Larunbata</span>
+                </div>
+                <div class="mt-3 grid grid-cols-4 gap-2 text-xs">
+                  <span class="rounded-lg border border-vento-blue/55 bg-vento-blue/20 px-2 py-2 text-center text-vento-white">20:00</span>
+                  <span class="rounded-lg border border-vento-white/12 px-2 py-2 text-center text-vento-white/80">20:30</span>
+                  <span class="rounded-lg border border-vento-white/12 px-2 py-2 text-center text-vento-white/80">21:00</span>
+                  <span class="rounded-lg border border-vento-white/12 px-2 py-2 text-center text-vento-white/80">21:30</span>
+                </div>
+                <div class="mt-3 rounded-xl border border-amber-300/35 bg-amber-300/10 p-3">
+                  <p class="text-[0.68rem] uppercase tracking-[0.1em] text-amber-100 light:text-amber-700">Alergiak edo intolerantziak (bezeroa)</p>
+                  <div class="mt-2 flex flex-wrap gap-2 text-[0.66rem]">
+                    <span class="reservation-allergy-tag rounded-full px-2.5 py-1 font-semibold uppercase tracking-[0.08em]">Glutena</span>
+                    <span class="reservation-allergy-tag rounded-full px-2.5 py-1 font-semibold uppercase tracking-[0.08em]">Laktosa</span>
+                    <span class="reservation-allergy-tag rounded-full px-2.5 py-1 font-semibold uppercase tracking-[0.08em]">Fruitu lehorrak</span>
+                    <span class="reservation-allergy-tag rounded-full px-2.5 py-1 font-semibold uppercase tracking-[0.08em]">Itsaskiak</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-vento-white/12 bg-vento-black/40 p-5 light:bg-white/80">
+              <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">Baieztapen automatikoa</p>
+              <div class="mt-4 rounded-2xl border border-emerald-300/30 bg-emerald-400/10 p-4">
+                <p class="text-sm font-semibold text-emerald-100 light:text-emerald-700">Erreserba baieztatua 21:00etarako</p>
+                <p class="mt-2 text-xs text-vento-white/75 light:text-vento-lightText/75">WhatsApp bat bidali dizugu kokapenarekin eta zuzenean aldatzeko edo ezeztatzeko estekarekin.</p>
+              </div>
+              <ul class="mt-4 space-y-2 text-sm text-vento-white/80 light:text-vento-lightText/80">
+                <li>Abisu automatikoa 3 ordu lehenago.</li>
+                <li>Mugikorretik ukitu bakarreko berrespena.</li>
+                <li>Ezeztapen azkarra mahaia berehala askatzeko.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 pb-10 sm:px-8 sm:pb-14" id="preview-web" aria-labelledby="preview-web-title">
+        <article class="reveal rounded-3xl border border-vento-blue/45 bg-gradient-to-br from-vento-blue/12 via-vento-blue/8 to-transparent p-6 sm:p-8">
+          <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">Benetako web aurrebista</p>
+          <h2 id="preview-web-title" class="mt-2 font-heading text-3xl text-vento-white sm:text-4xl">Probatu VENTOk jada eraikitako web bat</h2>
+          <p class="mt-3 max-w-2xl text-sm text-vento-white/80">Demo txartel independentea benetako adibide weba trantsizio dotorearekin irekitzeko.</p>
+          <a href="../WebExample/index.html" class="mt-5 inline-flex rounded-full border border-vento-white/20 px-5 py-2.5 text-xs font-semibold tracking-[0.1em] text-vento-white transition hover:border-vento-blue/70 hover:bg-vento-white/5">AURREBISTA IREKI</a>
+        </article>
       </section>
 
       <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="simulador" aria-labelledby="simulador-title">
@@ -855,15 +1188,6 @@
         </div>
       </section>
 
-      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="sello-vento" aria-labelledby="sello-vento-title">
-        <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
-          <p class="text-xs uppercase tracking-[0.16em] text-vento-blue">Vento kalitate zigilua</p>
-          <h2 id="sello-vento-title" class="mt-2 font-heading text-3xl sm:text-5xl">Hurbiltasuna zaintzea. Donostin gaude.</h2>
-          <p class="mt-4 max-w-3xl text-vento-white/80">Ostiral gau batean arazoren bat baduzu, ez duzu bot batekin hitz egiten, Ikerrekin eta Vento taldearekin hitz egiten duzu.
-            Laguntza gizatiarra eta azkarra Gipuzkoan benetako ostalaritza-testuinguruarekin.</p>
-        </div>
-      </section>
-
       <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="calculadora" aria-labelledby="calculadora-title">
         <div class="reveal rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
           <h2 id="calculadora-title" class="font-heading text-3xl sm:text-5xl">Hobekuntza potentzial kalkulagailua</h2>
@@ -884,32 +1208,6 @@
           </div>
           <div class="mt-6 rounded-2xl border border-vento-blue/45 bg-vento-blue/10 p-5">
             <p id="calc-result" class="text-sm text-vento-white/90"></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="sectores" aria-labelledby="sectores-title">
-        <div class="reveal">
-          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2 id="sectores-title" class="font-heading text-3xl sm:text-5xl">Irtenbideak sektoreka</h2>
-              <p class="mt-3 max-w-2xl text-vento-white/75">Negozio motaren arabera benetako asmoaren arabera kokatzeko orrialde zehatzak.</p>
-            </div>
-            <a href="sectores.html" class="rounded-full border border-vento-blue/70 px-5 py-2 text-xs font-semibold tracking-[0.12em] hover:bg-vento-blue">SEKTOR GUZTIAK IKUSI</a>
-          </div>
-          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="servicios-restaurantes.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60 hover:bg-vento-white/[0.04]">
-              <h3 class="font-heading text-2xl">Jatetxeak</h3>
-              <p class="mt-2 text-sm text-vento-white/75">Erreserbak, menu digitala eta ostalaritzarako bihurketa.</p>
-            </a>
-            <a href="servicios-clinicas.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60 hover:bg-vento-white/[0.04]">
-              <h3 class="font-heading text-2xl">Klinikak</h3>
-              <p class="mt-2 text-sm text-vento-white/75">Medikuntzako edo osasuneko hitzorduak jasotzea eta kudeatzea.</p>
-            </a>
-            <a href="servicios-estetica.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60 hover:bg-vento-white/[0.04]">
-              <h3 class="font-heading text-2xl">Zentro estetikoak</h3>
-              <p class="mt-2 text-sm text-vento-white/75">Agenda digitala eta premium tratamenduen salmenta.</p>
-            </a>
           </div>
         </div>
       </section>
@@ -958,28 +1256,6 @@
               <p class="mt-3 text-xs text-vento-white/60">Bidaltzean zure posta-bezeroa irekiko dugu aurrez betetako informazioarekin.</p>
             </div>
           </form>
-        </div>
-      </section>
-
-      <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" id="blog" aria-labelledby="blog-title">
-        <div class="reveal">
-          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2 id="blog-title" class="font-heading text-3xl sm:text-5xl">SEO bloga hiriaren eta negozioaren arabera</h2>
-              <p class="mt-3 max-w-2xl text-vento-white/75">Erosteko asmoa duten bezeroak erakartzeko buztan luzeko bilaketetara zuzendutako arkitektura.</p>
-            </div>
-            <a href="blog.html" class="rounded-full border border-vento-blue/70 px-5 py-2 text-xs font-semibold tracking-[0.12em] hover:bg-vento-blue">JOAN BLOGERA</a>
-          </div>
-          <div class="mt-8 grid gap-4 md:grid-cols-2">
-            <a href="blog/diseno-web-restaurantes-madrid.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60">
-              <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">Madril | Jatetxeak</p>
-              <h3 class="mt-2 font-heading text-2xl">Nola erakarri erreserba gehiago webgune optimizatu batekin</h3>
-            </a>
-            <a href="blog/diseno-web-clinicas-barcelona.html" class="rounded-2xl border border-vento-white/10 bg-vento-white/[0.02] p-5 transition hover:border-vento-blue/60">
-              <p class="text-xs uppercase tracking-[0.12em] text-vento-blue">Bartzelona | Klinikak</p>
-              <h3 class="mt-2 font-heading text-2xl">Zein web-egiturak bihurtzen duen hitzordu gehien</h3>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -1037,13 +1313,12 @@
             <li><a href="#enemigo" class="hover:text-vento-blue">Etsaia</a></li>
             <li><a href="#adn" class="hover:text-vento-blue">Vento DNA</a></li>
             <li><a href="#servicios" class="hover:text-vento-blue">Zerbitzuak</a></li>
+            <li><a href="#demo-reservas" class="hover:text-vento-blue">Erreserben Demoa</a></li>
+            <li><a href="#vista-cliente" class="hover:text-vento-blue">Bezeroaren Ikuspegia</a></li>
             <li><a href="#simulador" class="hover:text-vento-blue">Simulagailua</a></li>
             <li><a href="#adios-pdf" class="hover:text-vento-blue">Agur PDF</a></li>
-            <li><a href="#sello-vento" class="hover:text-vento-blue">Haize zigilua</a></li>
             <li><a href="#calculadora" class="hover:text-vento-blue">Kalkulagailua</a></li>
-            <li><a href="#sectores" class="hover:text-vento-blue">SEKTOREAK</a></li>
             <li><a href="#proceso" class="hover:text-vento-blue">Gure Prozesua</a></li>
-            <li><a href="#blog" class="hover:text-vento-blue">SEO Bloga</a></li>
             <li><a href="#faq" class="hover:text-vento-blue">Ohiko galderak</a></li>
           </ul>
         </nav>
@@ -1065,11 +1340,28 @@
       aria-live="polite"
       aria-label="Aviso de cookies"
     >
-      <p>Cookie teknikoak eta analitikoak erabiltzen ditugu zure esperientzia hobetzeko. Funtsezkoak ez diren cookieak onartu edo baztertu ditzakezu. Informazio gehiago helbidean<a href="cookies.html" class="text-vento-blue hover:underline">Cookieen politika</a>.
+      <p>
+        Konfiguratu cookie baimena kategoriaka. Cookie teknikoak beharrezkoak dira, eta analitika edo marketina aktibatu edo desaktibatu ditzakezu.
+        Xehetasunak hemen: <a href="cookies.html" class="text-vento-blue hover:underline">Cookieen politika</a>.
       </p>
+      <div class="mt-3 grid gap-2 sm:grid-cols-3">
+        <label class="rounded-xl border border-vento-white/15 bg-vento-white/[0.03] px-3 py-2 text-xs">
+          <span class="block font-semibold uppercase tracking-[0.08em]">Teknikoak</span>
+          <span class="block text-vento-white/70">Beti aktibo</span>
+        </label>
+        <label class="rounded-xl border border-vento-white/15 bg-vento-white/[0.03] px-3 py-2 text-xs">
+          <span class="block font-semibold uppercase tracking-[0.08em]">Analitika</span>
+          <span class="mt-1 block"><input id="cookie-analytics" type="checkbox" class="accent-[#4da3ff]" /> Baimendu</span>
+        </label>
+        <label class="rounded-xl border border-vento-white/15 bg-vento-white/[0.03] px-3 py-2 text-xs">
+          <span class="block font-semibold uppercase tracking-[0.08em]">Marketina</span>
+          <span class="mt-1 block"><input id="cookie-marketing" type="checkbox" class="accent-[#4da3ff]" /> Baimendu</span>
+        </label>
+      </div>
       <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:justify-end">
-        <button id="cookie-reject" type="button" class="rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:border-vento-blue/70 hover:bg-vento-white/5">GAINERATU</button>
-        <button id="cookie-accept" type="button" class="rounded-full bg-vento-blue px-4 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:shadow-glow">ONARTU</button>
+        <button id="cookie-reject-all" type="button" class="cookie-secondary rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:border-vento-blue/70 hover:bg-vento-white/5">DENA UKATU</button>
+        <button id="cookie-save" type="button" class="cookie-secondary rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:border-vento-blue/70 hover:bg-vento-white/5">HAUTUA GORDE</button>
+        <button id="cookie-accept-all" type="button" class="cookie-primary rounded-full bg-vento-blue px-4 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:shadow-glow">DENA ONARTU</button>
       </div>
     </aside>
 
@@ -1187,7 +1479,7 @@
 
       document
         .querySelectorAll(
-          '#enemigo article, #simulador article, #adios-pdf article, #servicios article, #sello-vento div.reveal, #calculadora div.reveal, #portfolio article, #proceso li, #faq article, #contacto div.reveal, #blog a.rounded-2xl'
+          '#enemigo article, #simulador article, #adios-pdf article, #servicios article, #demo-reservas article, #vista-cliente article, #calculadora div.reveal, #portfolio article, #proceso li, #faq article, #contacto div.reveal'
         )
         .forEach((item) => item.classList.add('premium-card'));
 
@@ -1231,27 +1523,84 @@
       });
 
       const cookieBanner = document.getElementById('cookie-banner');
-      const cookieAccept = document.getElementById('cookie-accept');
-      const cookieReject = document.getElementById('cookie-reject');
-      const cookieConsent = localStorage.getItem('vento_cookie_consent');
+      const cookieRejectAll = document.getElementById('cookie-reject-all');
+      const cookieSave = document.getElementById('cookie-save');
+      const cookieAcceptAll = document.getElementById('cookie-accept-all');
+      const cookieAnalytics = document.getElementById('cookie-analytics');
+      const cookieMarketing = document.getElementById('cookie-marketing');
+      const cookieConsent = localStorage.getItem('vento_cookie_consent_v2');
+
+      const applyConsentMode = (consent) => {
+        if (typeof gtag !== 'function') return;
+        gtag('consent', 'update', {
+          analytics_storage: consent.analytics ? 'granted' : 'denied',
+          ad_storage: consent.marketing ? 'granted' : 'denied',
+          ad_user_data: consent.marketing ? 'granted' : 'denied',
+          ad_personalization: consent.marketing ? 'granted' : 'denied',
+          functionality_storage: 'granted',
+          security_storage: 'granted'
+        });
+      };
+
+      if (typeof gtag === 'function') {
+        gtag('consent', 'default', {
+          analytics_storage: 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          functionality_storage: 'granted',
+          security_storage: 'granted'
+        });
+      }
 
       if (!cookieConsent) {
         cookieBanner.classList.remove('cookie-hidden');
         cookieBanner.classList.add('cookie-visible');
+      } else {
+        try {
+          const parsedConsent = JSON.parse(cookieConsent);
+          cookieAnalytics.checked = Boolean(parsedConsent.analytics);
+          cookieMarketing.checked = Boolean(parsedConsent.marketing);
+          applyConsentMode(parsedConsent);
+        } catch (error) {
+          cookieBanner.classList.remove('cookie-hidden');
+          cookieBanner.classList.add('cookie-visible');
+        }
       }
 
-      const closeCookieBanner = (value) => {
+      const saveConsent = (consent, label) => {
         trackEvent('cookie_consent', {
           event_category: 'privacy',
-          event_label: value
+          event_label: label
         });
-        localStorage.setItem('vento_cookie_consent', value);
+        localStorage.setItem('vento_cookie_consent_v2', JSON.stringify(consent));
+        applyConsentMode(consent);
         cookieBanner.classList.remove('cookie-visible');
         cookieBanner.classList.add('cookie-hidden');
       };
 
-      cookieAccept.addEventListener('click', () => closeCookieBanner('accepted'));
-      cookieReject.addEventListener('click', () => closeCookieBanner('rejected'));
+      cookieAcceptAll.addEventListener('click', () => {
+        cookieAnalytics.checked = true;
+        cookieMarketing.checked = true;
+        saveConsent({ necessary: true, analytics: true, marketing: true }, 'accept_all');
+      });
+
+      cookieRejectAll.addEventListener('click', () => {
+        cookieAnalytics.checked = false;
+        cookieMarketing.checked = false;
+        saveConsent({ necessary: true, analytics: false, marketing: false }, 'reject_all');
+      });
+
+      cookieSave.addEventListener('click', () => {
+        saveConsent(
+          {
+            necessary: true,
+            analytics: cookieAnalytics.checked,
+            marketing: cookieMarketing.checked
+          },
+          'custom_save'
+        );
+      });
 
       const leadForm = document.getElementById('lead-form');
 
@@ -1295,6 +1644,89 @@
         el.addEventListener('input', renderPotentialCalculator);
       });
       renderPotentialCalculator();
+
+      const reservationList = document.getElementById('reservation-list');
+      const reservationFilters = document.getElementById('reservation-filters');
+
+      if (reservationList && reservationFilters) {
+        const reservationItems = Array.from(reservationList.querySelectorAll('.reservation-item'));
+        const filterButtons = Array.from(reservationFilters.querySelectorAll('[data-filter]'));
+        const reservationActionFeedback = document.getElementById('reservation-action-feedback');
+
+        const updateReservationCounters = () => {
+          const total = reservationItems.length;
+          const confirmed = reservationItems.filter((item) => item.dataset.status === 'confirmed').length;
+          const waiting = reservationItems.filter((item) => item.dataset.status === 'waiting').length;
+
+          const totalCounter = document.querySelector('[data-res-counter="total"]');
+          const confirmedCounter = document.querySelector('[data-res-counter="confirmed"]');
+          const waitingCounter = document.querySelector('[data-res-counter="waiting"]');
+
+          if (totalCounter) totalCounter.textContent = String(total);
+          if (confirmedCounter) confirmedCounter.textContent = String(confirmed);
+          if (waitingCounter) waitingCounter.textContent = String(waiting);
+        };
+
+        const applyReservationFilter = (filter) => {
+          reservationItems.forEach((item) => {
+            const visible = filter === 'all' || item.dataset.status === filter;
+            item.classList.toggle('is-hidden', !visible);
+          });
+
+          filterButtons.forEach((button) => {
+            button.classList.toggle('active', button.dataset.filter === filter);
+          });
+        };
+
+        reservationFilters.addEventListener('click', (event) => {
+          const button = event.target.closest('[data-filter]');
+          if (!button) return;
+          applyReservationFilter(button.dataset.filter);
+        });
+
+        reservationList.addEventListener('click', (event) => {
+          const actionButton = event.target.closest('.reservation-action');
+
+          const panelActionButton = event.target.closest('[data-panel-action]');
+          if (panelActionButton && reservationActionFeedback) {
+            const actionMap = {
+              checkin: 'Iritsiera erregistratuta. Areto taldea abisatuta.',
+              reminder: 'WhatsApp oroigarria bidalia zain dauden erreserbei.',
+              reassign: 'Mahaia berriz esleituta eta bezeroa automatikoki jakinarazita.',
+              whatsapp: 'WhatsApp txantiloi azkarra irekitzen erreserba honetarako.',
+              edit: 'Edizio modua aktibatuta: ordua, mahaia eta mahaikide kopurua.',
+              call: 'Dei azkarra hasita erreserbaren titularrarekin.'
+            };
+            reservationActionFeedback.textContent = actionMap[panelActionButton.dataset.panelAction] || 'Ekintza panelean eginda.';
+          }
+
+          if (!actionButton) return;
+
+          const reservationItem = actionButton.closest('.reservation-item');
+          if (!reservationItem) return;
+
+          const badge = reservationItem.querySelector('.reservation-badge');
+          if (!badge) return;
+
+          if (actionButton.dataset.action === 'confirm') {
+            reservationItem.dataset.status = 'confirmed';
+            badge.className = 'reservation-badge confirmed';
+            badge.textContent = 'Baieztatua';
+          }
+
+          if (actionButton.dataset.action === 'cancel') {
+            reservationItem.dataset.status = 'cancelled';
+            badge.className = 'reservation-badge cancelled';
+            badge.textContent = 'Ezeztatua';
+          }
+
+          const actionButtons = reservationItem.querySelectorAll('.reservation-action');
+          actionButtons.forEach((button) => button.remove());
+          updateReservationCounters();
+        });
+
+        updateReservationCounters();
+      }
 
       const cursorDot = document.getElementById('cursor-dot');
       let cursorX = window.innerWidth / 2;
