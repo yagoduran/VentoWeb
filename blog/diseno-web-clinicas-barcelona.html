@@ -1,84 +1,96 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diseño Web para Clínicas en Barcelona | VENTO</title>
     <meta name="description" content="Cómo convertir visitas en citas para clínicas en Barcelona con arquitectura web y automatización." />
     <meta name="keywords" content="diseño web clínicas Barcelona, citas online clínica Barcelona" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://vento.digital/blog/diseno-web-clinicas-barcelona.html" />
-        <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content="Diseño Web para Clínicas en Barcelona | VENTO" />
     <meta property="og:description" content="Cómo convertir visitas en citas para clínicas en Barcelona con arquitectura web y automatización." />
     <meta property="og:url" content="https://vento.digital/blog/diseno-web-clinicas-barcelona.html" />
-    <meta property="og:site_name" content="VENTO" />        <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Diseño Web para Clínicas en Barcelona | VENTO" />
-    <meta name="twitter:description" content="Cómo convertir visitas en citas para clínicas en Barcelona con arquitectura web y automatización." />    <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
-<meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-<link rel="icon" type="image/png" href="../logoVentoTransparente.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{vento:{black:'#061a40',blue:'#4da3ff',white:'#f8fbff'}},fontFamily:{heading:['Playfair Display','serif'],body:['Inter','sans-serif']}}}};</script>
-      <style>
-      .skip-link {
-        position: absolute;
-        left: -9999px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-
-      .skip-link:focus {
-        left: 1rem;
-        top: 1rem;
-        width: auto;
-        height: auto;
-        z-index: 1000;
-        overflow: visible;
-        border-radius: 9999px;
-        background: #4da3ff;
-        color: #061a40;
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-      }
-
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible,
-      select:focus-visible,
-      textarea:focus-visible {
-        outline: 2px solid #4da3ff;
-        outline-offset: 2px;
-      }
+    <meta name="twitter:description" content="Cómo convertir visitas en citas para clínicas en Barcelona con arquitectura web y automatización." />
+    <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
+    <link rel="icon" type="image/png" href="../logoVentoTransparente.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root{color-scheme:dark;--bg:#020617;--panel:rgba(15,23,42,.72);--line:rgba(148,163,184,.22);--line2:rgba(34,211,238,.46);--text:#f8fafc;--muted:#a7b4c8;--cyan:#22d3ee;--emerald:#34d399;--r:8px}
+      *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;min-width:320px;background:linear-gradient(180deg,rgba(2,6,23,0) 0,#020617 720px),linear-gradient(90deg,rgba(34,211,238,.08) 1px,transparent 1px),linear-gradient(180deg,rgba(52,211,153,.05) 1px,transparent 1px),var(--bg);background-size:auto,72px 72px,72px 72px,auto;color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+      body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(135deg,rgba(34,211,238,.12),transparent 34rem),linear-gradient(315deg,rgba(52,211,153,.1),transparent 36rem)}
+      a{color:inherit;text-decoration:none}.container{width:min(1040px,calc(100% - 2rem));margin:auto}
+      .skip-link{position:absolute;left:1rem;top:1rem;z-index:200;transform:translateY(-160%);border-radius:var(--r);background:var(--cyan);color:#03111f;padding:.65rem .9rem;font-weight:800}.skip-link:focus{transform:translateY(0);outline:2px solid var(--text);outline-offset:3px}
+      .site-header{position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(148,163,184,.14);background:rgba(2,6,23,.72);backdrop-filter:blur(18px)}
+      .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:82px}.brand{display:flex;align-items:center;gap:.65rem}.brand img{width:46px;height:46px;object-fit:contain}
+      .nav-links{display:flex;align-items:center;gap:.65rem}
+      .button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border:1px solid var(--line);border-radius:var(--r);padding:.64rem .9rem;background:rgba(15,23,42,.55);color:var(--text);font-weight:800;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+      .button:hover{transform:translateY(-2px);border-color:var(--line2);background:rgba(15,23,42,.82)}
+      .button-primary{background:linear-gradient(135deg,var(--cyan),var(--emerald));color:#02111d;border-color:transparent}
+      main{padding:2.4rem 0 3.2rem}
+      .post-shell{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);backdrop-filter:blur(18px);padding:1.3rem}
+      .article-content>*{margin:0}
+      .article-content>*+*{margin-top:1rem}
+      .article-content p{color:var(--muted)}
+      .article-content h1,.article-content h2,.article-content h3{font-family:Outfit,Inter,sans-serif;line-height:1.05;color:var(--text)}
+      .article-content h1{font-size:clamp(2rem,5vw,3.4rem)}
+      .article-content h2{font-size:clamp(1.35rem,3.2vw,2.2rem);margin-top:1.5rem}
+      .article-content ul{display:grid;gap:.55rem;padding-left:1.1rem;color:#cbd5e1}
+      .article-content li{margin:0}
+      .article-content a{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;border:1px solid transparent;border-radius:var(--r);padding:.72rem 1rem;background:linear-gradient(135deg,var(--cyan),var(--emerald));color:#02111d;font-weight:800;margin-top:.6rem}
+      .site-footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted)}
+      .footer-grid{display:grid;gap:1rem}.footer-links{display:flex;flex-wrap:wrap;gap:.85rem}.footer-links a:hover{color:var(--cyan)}
+      @media (min-width:760px){.footer-grid{grid-template-columns:1fr auto;align-items:center}.post-shell{padding:1.6rem}}
     </style>
   </head>
-  <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white">
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-    <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
-      <a href="../index.html" class="inline-flex items-center" aria-label="Ir al inicio">
-        <img src="../logoVentoTransparente.png" alt="Logo VENTO" class="h-12 w-auto" loading="lazy" decoding="async" />
-      </a>
-      <nav class="flex items-center gap-2 sm:gap-3" aria-label="Navegacion principal">
-        <a href="../index.html" class="rounded-full border border-vento-white/20 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:border-vento-blue/70 hover:bg-vento-white/5">INICIO</a>
-        <a href="../blog.html" aria-current="page" class="rounded-full border border-vento-blue/70 px-4 py-2 text-xs font-semibold tracking-[0.08em] transition hover:bg-vento-blue">BLOG</a>
-      </nav>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="../index.html" aria-label="Vento home">
+          <img src="../logoVentoTransparente.png" alt="Vento logo" />
+          <strong>Vento Agency</strong>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="button" href="../index.html">Inicio</a>
+          <a class="button button-primary" href="../blog.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
     </header>
-    <article id="main-content" class="mx-auto max-w-4xl px-5 pb-10 pt-2 sm:px-8 sm:pb-16 sm:pt-6">
-      <p class="mt-6 text-xs uppercase tracking-[0.12em] text-vento-blue">Barcelona | Clínicas</p>
-      <h1 class="mt-2 font-heading text-4xl sm:text-6xl">Qué estructura web convierte más citas en clínicas de Barcelona</h1>
-      <p class="mt-5 text-vento-white/75">La mayoría de webs sanitarias pierden conversiones por exceso de pasos. El objetivo: una experiencia simple y confiable desde el primer scroll.</p>
-      <h2 class="mt-8 font-heading text-3xl">Puntos críticos</h2>
-      <ul class="mt-3 list-disc space-y-2 pl-5 text-vento-white/80"><li>Página por servicio con llamada a la acción específica.</li><li>Formulario de cita visible en móvil.</li><li>Validación médica y testimonios.</li><li>FAQ para objeciones frecuentes.</li></ul>
-      <a href="mailto:ventoagency0@gmail.com?subject=Web%20clinica%20Barcelona" class="mt-8 inline-flex rounded-full bg-vento-blue px-6 py-3 text-xs font-bold tracking-[0.12em]">QUIERO ESTA ESTRUCTURA</a>
-    </article>
-      <script src="../page-transition.js" defer></script>
+
+    <main id="main-content">
+      <div class="container">
+        <article class="post-shell">
+          <div class="article-content"><p>Barcelona | Clínicas</p>
+      <h1>Qué estructura web convierte más citas en clínicas de Barcelona</h1>
+      <p>La mayoría de webs sanitarias pierden conversiones por exceso de pasos. El objetivo: una experiencia simple y confiable desde el primer scroll.</p>
+      <h2>Puntos críticos</h2>
+      <ul><li>Página por servicio con llamada a la acción específica.</li><li>Formulario de cita visible en móvil.</li><li>Validación médica y testimonios.</li><li>FAQ para objeciones frecuentes.</li></ul>
+      <a href="mailto:ventoagency0@gmail.com?subject=Web%20clinica%20Barcelona">QUIERO ESTA ESTRUCTURA</a>
+        </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Vento Agency. Articulo de estrategia digital local.</p>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../aviso-legal.html">Aviso Legal</a>
+          <a href="../privacidad.html">Privacidad</a>
+          <a href="../cookies.html">Cookies</a>
+          <a href="../blog.html">Blog</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../page-transition.js" defer></script>
   </body>
 </html>
-
-

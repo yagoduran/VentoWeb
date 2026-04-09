@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo | Vento Gastro Pro</title>
+    <meta name="description" content="Demo visual para restaurantes: carta digital, reservas y experiencia premium en movil." />
+    <link rel="icon" type="image/png" href="../logoVentoTransparente.png" />
+    <style>
+      :root{color-scheme:dark;--bg:#0f172a;--panel:rgba(17,24,39,.74);--line:rgba(251,191,36,.34);--text:#fff8ee;--muted:#d6c8af;--accent:#f59e0b;--accent2:#f97316;--r:10px}
+      *{box-sizing:border-box}html,body{margin:0}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 15% -5%,rgba(249,115,22,.25),transparent 28rem),radial-gradient(circle at 85% -10%,rgba(245,158,11,.18),transparent 24rem),linear-gradient(180deg,#0f172a,#111827);line-height:1.55}
+      a{color:inherit;text-decoration:none}.container{width:min(1100px,calc(100% - 2rem));margin:auto}
+      .site-header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);backdrop-filter:blur(16px);background:rgba(15,23,42,.72)}
+      .nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:1rem}.brand{display:flex;align-items:center;gap:.65rem}.brand img{width:44px;height:44px;object-fit:contain}.brand strong{display:block}.brand small{display:block;color:var(--muted)}
+      .button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.7rem 1rem;border-radius:var(--r);border:1px solid var(--line);font-weight:700}.button:hover{background:rgba(245,158,11,.14)}
+      .hero{padding:4.6rem 0 3.4rem}.hero-grid{display:grid;gap:1.4rem}.eyebrow{display:inline-flex;padding:.3rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--accent);font-weight:700;font-size:.78rem}.hero h1{margin:.9rem 0 0;font-size:clamp(2rem,5.3vw,3.6rem);line-height:1.02}.lead{max-width:62ch;margin:1.1rem 0 0;color:var(--muted)}
+      .panel{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:1.1rem}.metrics{display:grid;gap:.8rem;margin-top:1.25rem}.metric strong{font-size:1.3rem;display:block}.metric span{color:var(--muted);font-size:.92rem}
+      section{padding:2.8rem 0}.section-title{font-size:1.85rem;margin:0 0 .7rem}
+      .grid{display:grid;gap:1rem}.card{border:1px solid var(--line);border-radius:var(--r);padding:1rem;background:rgba(255,255,255,.04)}.card h3{margin:.2rem 0 .45rem;font-size:1.1rem}.card p{margin:0;color:var(--muted)}
+      .highlight{border:1px solid var(--line);border-radius:var(--r);padding:1.1rem;background:linear-gradient(145deg,rgba(245,158,11,.14),rgba(249,115,22,.08))}
+      .site-footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted)}
+      @media (min-width:760px){.hero-grid{grid-template-columns:1.05fr .95fr}.metrics,.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="../index.html" aria-label="Volver a Vento">
+          <img src="../logoVentoTransparente.png" alt="Vento" />
+          <span><strong>Vento Gastro Pro</strong><small>Demo para restaurantes</small></span>
+        </a>
+        <a class="button" href="../index.html#showroom">Volver a demos</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Experiencia gastronómica digital</span>
+            <h1>Más reservas. Mejor ticket medio. Menos fricción.</h1>
+            <p class="lead">Esta demo está pensada para restaurantes que quieren atraer clientes desde móvil con una carta visual, motor de reservas y llamadas a la acción claras.</p>
+          </div>
+          <aside class="panel" aria-label="Resumen de rendimiento">
+            <h2 style="margin:.1rem 0 1rem;font-size:1.2rem">Panel operativo</h2>
+            <div class="metrics">
+              <div class="metric"><strong>+38%</strong><span>Reservas online estimadas tras rediseño.</span></div>
+              <div class="metric"><strong>-27%</strong><span>Menos llamadas repetitivas al automatizar horarios.</span></div>
+              <div class="metric"><strong>24/7</strong><span>Reservas activas desde Google y redes sociales.</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 class="section-title">Bloques clave de la web</h2>
+          <div class="grid">
+            <article class="card"><h3>Hero con propuesta clara</h3><p>Foto principal, especialidad y CTA para reservar en menos de 5 segundos.</p></article>
+            <article class="card"><h3>Carta digital editable</h3><p>Platos destacados, alérgenos y menús de temporada sin depender de PDFs.</p></article>
+            <article class="card"><h3>Reserva directa</h3><p>Selector de fecha y tramo horario conectado con tu flujo de confirmación.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="highlight">
+            <h2 style="margin:.2rem 0 .55rem;font-size:1.55rem">Escenario de campaña local</h2>
+            <p style="margin:0;color:var(--muted)">Landing para "menu mediodia + ciudad", integración con Instagram y recordatorio automático para reducir no-shows.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">Demo creada por Vento Agency para mostrar un sistema web de captación en restauración.</div>
+    </footer>
+  </body>
+</html>

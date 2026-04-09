@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo | Vento Estate View</title>
+    <meta name="description" content="Demo para inmobiliarias con filtros de propiedades y formularios de lead." />
+    <link rel="icon" type="image/png" href="../logoVentoTransparente.png" />
+    <style>
+      :root{color-scheme:dark;--bg:#0f172a;--panel:rgba(15,23,42,.8);--line:rgba(59,130,246,.34);--text:#f1f5f9;--muted:#b6c6dd;--accent:#60a5fa;--accent2:#3b82f6;--r:10px}
+      *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 15% -8%,rgba(59,130,246,.22),transparent 28rem),radial-gradient(circle at 85% -6%,rgba(96,165,250,.18),transparent 24rem),linear-gradient(180deg,#020617,#0f172a);line-height:1.55}
+      a{text-decoration:none;color:inherit}.container{width:min(1100px,calc(100% - 2rem));margin:auto}
+      .site-header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);backdrop-filter:blur(16px);background:rgba(2,6,23,.72)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:1rem}
+      .brand{display:flex;align-items:center;gap:.65rem}.brand img{width:44px;height:44px}.brand strong{display:block}.brand small{display:block;color:var(--muted)}
+      .button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.7rem 1rem;border-radius:var(--r);border:1px solid var(--line);font-weight:700}.button:hover{background:rgba(96,165,250,.12)}
+      .hero{padding:4.6rem 0 3.4rem}.hero-grid{display:grid;gap:1.4rem}.eyebrow{display:inline-flex;padding:.3rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--accent);font-weight:700;font-size:.78rem}.hero h1{margin:.9rem 0 0;font-size:clamp(2rem,5.3vw,3.6rem);line-height:1.02}.lead{max-width:62ch;margin:1.1rem 0 0;color:var(--muted)}
+      .panel{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:1.1rem}.metrics{display:grid;gap:.8rem;margin-top:1.25rem}.metric strong{font-size:1.3rem;display:block}.metric span{color:var(--muted);font-size:.92rem}
+      section{padding:2.8rem 0}.section-title{font-size:1.85rem;margin:0 0 .7rem}.grid{display:grid;gap:1rem}.card{border:1px solid var(--line);border-radius:var(--r);padding:1rem;background:rgba(255,255,255,.04)}.card h3{margin:.2rem 0 .45rem;font-size:1.1rem}.card p{margin:0;color:var(--muted)}
+      .highlight{border:1px solid var(--line);border-radius:var(--r);padding:1.1rem;background:linear-gradient(145deg,rgba(59,130,246,.14),rgba(96,165,250,.08))}
+      .site-footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted)}
+      @media (min-width:760px){.hero-grid{grid-template-columns:1.05fr .95fr}.metrics,.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    </style>
+  </head>
+  <body>
+    <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="Volver a Vento"><img src="../logoVentoTransparente.png" alt="Vento" /><span><strong>Vento Estate View</strong><small>Demo para inmobiliarias</small></span></a><a class="button" href="../index.html#showroom">Volver a demos</a></div></header>
+    <main>
+      <section class="hero"><div class="container hero-grid"><div><span class="eyebrow">Sistema inmobiliario de captacion</span><h1>Propiedades bien mostradas, leads mejor filtrados.</h1><p class="lead">Demo orientada a agencias inmobiliarias que necesitan destacar portfolio, segmentar visitas y acelerar solicitudes de informacion.</p></div><aside class="panel" aria-label="Resumen de rendimiento"><h2 style="margin:.1rem 0 1rem;font-size:1.2rem">Panel operativo</h2><div class="metrics"><div class="metric"><strong>+29%</strong><span>Leads cualificados por formulario guiado.</span></div><div class="metric"><strong>Filtros claros</strong><span>Tipo, zona, precio y estado en 1 pantalla.</span></div><div class="metric"><strong>Seguimiento</strong><span>Contacto automatizado post visita.</span></div></div></aside></div></section>
+      <section><div class="container"><h2 class="section-title">Bloques clave de la web</h2><div class="grid"><article class="card"><h3>Buscador con filtros</h3><p>Interfaz de búsqueda por tipo de inmueble, ubicación y rango de precio.</p></article><article class="card"><h3>Fichas de propiedad premium</h3><p>Galería visual, planos y puntos destacados para generar interés real.</p></article><article class="card"><h3>Lead form inteligente</h3><p>Recogida de datos de intención para priorizar contactos comerciales.</p></article></div></div></section>
+      <section><div class="container"><div class="highlight"><h2 style="margin:.2rem 0 .55rem;font-size:1.55rem">Escenario de campaña local</h2><p style="margin:0;color:var(--muted)">Landing por barrio con inmuebles destacados, oferta nueva y formulario de visita inmediata.</p></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="container">Demo creada por Vento Agency para agencias inmobiliarias locales.</div></footer>
+  </body>
+</html>

@@ -1,154 +1,259 @@
 <!doctype html>
-<html lang="es">
+<html lang="eu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pribatutasun politika | HAIZEA</title>
-    <meta name="description" content="Política de privacidad de VENTO conforme al RGPD y la normativa española." />
-    <meta name="keywords" content="Privacidad VENTO, RGPD, protección de datos" />
-    <meta name="author" content="VENTO" />
+    <title>Pribatutasun politika | Vento Agency</title>
+    <meta name="description" content="Datu pertsonalen tratamendua eta babesa Vento Agency-n." />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#061a40" />
-        <link rel="canonical" href="https://vento.digital/privacidad.html" />
+    <link rel="canonical" href="https://vento.digital/eu/privacidad.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:title" content="Política de Privacidad | VENTO" />
-    <meta property="og:description" content="Política de privacidad de VENTO conforme al RGPD y la normativa española." />
-    <meta property="og:url" content="https://vento.digital/privacidad.html" />
-    <meta property="og:site_name" content="VENTO" />        <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Política de Privacidad | VENTO" />
-    <meta name="twitter:description" content="Política de privacidad de VENTO conforme al RGPD y la normativa española." />    <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
-<meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta property="og:title" content="Pribatutasun politika | Vento Agency" />
+    <meta property="og:description" content="Datu pertsonalen tratamendua eta babesa Vento Agency-n." />
+    <meta property="og:url" content="https://vento.digital/eu/privacidad.html" />
+    <meta property="og:image" content="https://vento.digital/og-image-1200x630.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pribatutasun politika | Vento Agency" />
+    <meta name="twitter:description" content="Datu pertsonalen tratamendua eta babesa Vento Agency-n." />
+    <meta name="twitter:image" content="https://vento.digital/og-image-1200x630.png" />
+    <link rel="icon" type="image/png" href="../logoVentoTransparente.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;700;800&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              vento: {
-                black: "#061a40",
-                blue: "#4da3ff",
-                white: "#f8fbff"
-              }
-            },
-            fontFamily: {
-              heading: ["Playfair Display", "serif"],
-              body: ["Inter", "sans-serif"]
-            },
-            boxShadow: {
-              glow: "0 0 40px rgba(77, 163, 255, 0.24)"
-            },
-            keyframes: {
-              float: {
-                "0%, 100%": { transform: "translateY(0px)" },
-                "50%": { transform: "translateY(-10px)" }
-              }
-            },
-            animation: {
-              float: "float 7s ease-in-out infinite"
-            }
-          }
-        }
-      };
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
     <style>
-      .grain-bg {
-        background-image: radial-gradient(circle at 1px 1px, rgba(245, 245, 245, 0.05) 1px, transparent 0);
-        background-size: 30px 30px;
+      :root {
+        color-scheme: dark;
+        --bg: #020617;
+        --panel: rgba(15, 23, 42, 0.74);
+        --line: rgba(148, 163, 184, 0.24);
+        --line-strong: rgba(34, 211, 238, 0.42);
+        --text: #f8fafc;
+        --muted: #a9b7cc;
+        --cyan: #22d3ee;
+        --emerald: #34d399;
+        --radius: 16px;
       }
-    </style>
-      <style>
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; background: var(--bg); }
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.62;
+        background:
+          linear-gradient(180deg, rgba(2, 6, 23, 0) 0, #020617 720px),
+          linear-gradient(90deg, rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(52, 211, 153, 0.05) 1px, transparent 1px),
+          var(--bg);
+        background-size: auto, 72px 72px, 72px 72px, auto;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          linear-gradient(140deg, rgba(34, 211, 238, 0.13), transparent 34rem),
+          linear-gradient(320deg, rgba(52, 211, 153, 0.11), transparent 36rem);
+      }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1040px, calc(100% - 2rem)); margin: 0 auto; }
       .skip-link {
         position: absolute;
-        left: -9999px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-
-      .skip-link:focus {
         left: 1rem;
         top: 1rem;
-        width: auto;
-        height: auto;
-        z-index: 1000;
-        overflow: visible;
-        border-radius: 9999px;
-        background: #4da3ff;
-        color: #061a40;
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
+        z-index: 200;
+        transform: translateY(-160%);
+        border-radius: 10px;
+        background: var(--cyan);
+        color: #03111f;
+        padding: 0.65rem 0.9rem;
+        font-weight: 800;
       }
-
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible,
-      select:focus-visible,
-      textarea:focus-visible {
-        outline: 2px solid #4da3ff;
-        outline-offset: 2px;
+      .skip-link:focus { transform: translateY(0); outline: 2px solid var(--text); outline-offset: 3px; }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        background: rgba(2, 6, 23, 0.74);
+        backdrop-filter: blur(18px);
+      }
+      .nav {
+        min-height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .brand { display: flex; align-items: center; gap: 0.68rem; font-weight: 800; }
+      .brand img { width: 46px; height: 46px; object-fit: contain; }
+      .nav-links { display: flex; align-items: center; gap: 0.62rem; }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0.62rem 0.9rem;
+        background: rgba(15, 23, 42, 0.56);
+        font-weight: 800;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+      .button:hover { transform: translateY(-2px); border-color: var(--line-strong); background: rgba(15, 23, 42, 0.82); }
+      .button-primary {
+        background: linear-gradient(135deg, var(--cyan), var(--emerald));
+        color: #02111d;
+        border-color: transparent;
+      }
+      main { padding: 2.2rem 0 3.3rem; }
+      .hero {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+        backdrop-filter: blur(16px);
+        padding: 1.4rem;
+      }
+      .eyebrow {
+        display: inline-flex;
+        border: 1px solid rgba(34, 211, 238, 0.35);
+        color: #c7f9ff;
+        background: rgba(34, 211, 238, 0.15);
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        padding: 0.22rem 0.62rem;
+      }
+      h1, h2, h3 {
+        font-family: Outfit, Inter, sans-serif;
+        line-height: 1.08;
+        margin: 0;
+      }
+      h1 { margin-top: 0.78rem; font-size: clamp(1.9rem, 5vw, 3rem); }
+      .hero p { margin: 0.85rem 0 0; color: var(--muted); max-width: 68ch; }
+      .updated {
+        margin-top: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(15, 23, 42, 0.54);
+        color: #d1ddec;
+        padding: 0.33rem 0.72rem;
+        font-size: 0.84rem;
+        font-weight: 700;
+      }
+      .sections {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.9rem;
+      }
+      .section-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.58);
+        padding: 1rem;
+      }
+      .section-card h2 { font-size: clamp(1.2rem, 2.5vw, 1.55rem); }
+      .section-card p { margin: 0.6rem 0 0; color: var(--muted); }
+      .section-card ul { margin: 0.6rem 0 0; padding-left: 1.1rem; color: #d4deec; display: grid; gap: 0.34rem; }
+      .section-card li { margin: 0; }
+      .table-wrap { overflow-x: auto; margin-top: 0.75rem; }
+      table { width: 100%; border-collapse: collapse; min-width: 560px; }
+      th, td { border: 1px solid var(--line); padding: 0.62rem; text-align: left; vertical-align: top; }
+      th { color: #d8f8ff; background: rgba(34, 211, 238, 0.12); }
+      .site-footer {
+        border-top: 1px solid var(--line);
+        padding: 2rem 0;
+        color: var(--muted);
+      }
+      .footer-grid { display: grid; gap: 1rem; }
+      .footer-links { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+      .footer-links a:hover { color: var(--cyan); }
+      @media (min-width: 760px) {
+        .hero { padding: 1.7rem; }
+        .section-card { padding: 1.15rem; }
+        .footer-grid { grid-template-columns: 1fr auto; align-items: center; }
       }
     </style>
   </head>
-  <body class="bg-vento-black text-vento-white font-body antialiased selection:bg-vento-blue selection:text-vento-white">
-    <a href="#main-content" class="skip-link">Saltatu eduki nagusira</a>
-    <div class="fixed inset-0 -z-10 overflow-hidden">
-      <div class="absolute -top-40 left-1/2 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-vento-blue/15 blur-3xl animate-float"></div>
-      <div class="grain-bg absolute inset-0"></div>
-    </div>
-
-    <header class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
-      <a href="index.html" class="inline-flex items-center" aria-label="Volver a inicio">
-        <img src="../logoVentoTransparente.png" alt="Logo VENTO" class="h-10 w-auto" loading="lazy" decoding="async" />
-      </a>
-      <a href="index.html" class="rounded-full border border-vento-blue/70 px-4 py-2 text-xs font-semibold tracking-[0.08em] text-vento-white transition hover:bg-vento-blue hover:text-vento-white">ITZULERA</a>
+  <body>
+    <a class="skip-link" href="#main-content">Saltatu eduki nagusira</a>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Vento home">
+          <img src="../logoVentoTransparente.png" alt="Vento logo" />
+          <strong>Vento Agency</strong>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="button" href="index.html">Hasiera</a>
+          <a class="button button-primary" href="blog.html">Bloga</a>
+        </nav>
+      </div>
     </header>
 
-    <main id="main-content" class="mx-auto w-full max-w-4xl px-5 pb-16 pt-8 sm:px-8 sm:pt-16">
-      <article class="rounded-3xl border border-vento-white/10 bg-vento-white/[0.03] p-6 sm:p-10">
-        <h1 class="font-heading text-4xl sm:text-5xl">Pribatutasun-politika</h1>
-        <p class="mt-4 text-sm leading-relaxed text-vento-white/75">Espainiarako orientabide-oinarrizko testua. Osatu eremuak eta berrikusi aholkularitza juridikoarekin argitaratu aurretik.</p>
-
-        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
-          <h2 class="font-heading text-2xl text-vento-white">1. Datuen arduraduna</h2>
-          <p>Arduraduna: VENT</p>
-          <p>Zerga eta egoitza sozialaren informazioa eskuragarri dago eskaera formalean.</p>
-          <p>Posta elektronikoa: ventoagency0@gmail.com</p>
+    <main id="main-content">
+      <div class="container">
+        <section class="hero">
+          <span class="eyebrow">Pribatutasuna</span>
+          <h1>Pribatutasun politika</h1>
+          <p>Argitasuna datu pertsonalen tratamenduari eta erabiltzaileen eskubideei buruz.</p>
+          <span class="updated">Azken eguneraketa: 2026ko apirila</span>
         </section>
-
-        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
-          <h2 class="font-heading text-2xl text-vento-white">2. Xedea eta legitimazioa</h2>
-          <p>Datuak informazio eskaerei erantzuteko, zerbitzuekin lotutako merkataritza-komunikazioak kudeatzeko eta harreman profesionalari eusteko tratatzen dira.</p>
-          <p>Oinarri legitimatzailea interesdunaren adostasuna eta, hala badagokio, kontratu aurreko edo kontratuzko harremana gauzatzea da.</p>
-        </section>
-
-        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
-          <h2 class="font-heading text-2xl text-vento-white">3. Datuak gordetzea</h2>
-          <p>Datuak bildutako helburua betetzeko eta legezko erantzukizunei aurre egiteko behar den denboran gordeko dira.</p>
-        </section>
-
-        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
-          <h2 class="font-heading text-2xl text-vento-white">4. Hartzaileak eta transferentziak</h2>
-          <p>Ez zaie daturik lagako hirugarrenei legezko betebeharretan edo behar bezala kontratatutako datu-prozesadoreekin zerbitzua emateko beharrezkoa denean izan ezik.</p>
-        </section>
-
-        <section class="mt-8 space-y-3 text-sm leading-relaxed text-vento-white/80">
-          <h2 class="font-heading text-2xl text-vento-white">5. Eskubideak</h2>
-          <p>Sartzeko, zuzentzeko, ezabatzeko, aurka egiteko, mugatzeko eta eramangarritasun eskubideak erabil ditzakezu ventoagency0@gmail.com helbidera eskaera bat bidaliz, zure nortasuna frogatuz.</p>
-          <p>Datuak Babesteko Espainiako Agentzian (AEPD) erreklamazioa ere aurkeztu dezakezu.</p>
-        </section>
-      </article>
+        <div class="sections">
+          <section class="section-card">
+            <h2>1. Tratamenduaren arduraduna</h2>
+            <p>Webgune honetan jasotako datuen tratamenduaren arduraduna Vento Agency da. Pribatutasunari buruzko kontsultak <a href="mailto:ventoagency0@gmail.com">ventoagency0@gmail.com</a> helbidera bidali daitezke.</p>
+          </section>
+          <section class="section-card">
+            <h2>2. Zein datu biltzen diren</h2>
+            <ul>
+              <li>Formulario edo email bidez emandako harremanetarako datuak.</li>
+              <li>Nabigazio datu agregatuak, errendimendua hobetzeko.</li>
+              <li>Aurrekontu eta proiektu kudeaketarako beharrezko informazio komertziala.</li>
+            </ul>
+          </section>
+          <section class="section-card">
+            <h2>3. Helburuak eta oinarri juridikoa</h2>
+            <ul>
+              <li>Eskaerei eta komunikazioei erantzutea.</li>
+              <li>Kontratu aurreko eta kontratuko harremanak kudeatzea.</li>
+              <li>Webgunearen segurtasuna eta erabilgarritasuna hobetzea.</li>
+            </ul>
+            <p>Oinarri juridikoa kasuaren arabera izan daiteke: baimena, kontratuaren exekuzioa edo interes legitimoa.</p>
+          </section>
+          <section class="section-card">
+            <h2>4. Kontserbazioa eta hartzaileak</h2>
+            <p>Datuak behar den denboran gordetzen dira helburu bakoitzerako, eta legezko epeetan, beharrezkoa denean. Datuak ez dira saltzen, eta soilik legeak behartzen duenean edo tratamendu-arduradun laguntzaileekin partekatzen dira.</p>
+          </section>
+          <section class="section-card">
+            <h2>5. Erabiltzaileen eskubideak</h2>
+            <p>Eskubide hauek baliatu ditzakezu: sarbidea, zuzenketa, ezabaketa, aurka egitea, mugaketa eta eramangarritasuna. Horretarako, idatzi <a href="mailto:ventoagency0@gmail.com">ventoagency0@gmail.com</a> helbidera.</p>
+          </section>
+          <section class="section-card">
+            <h2>6. Segurtasuna eta eguneraketak</h2>
+            <p>Neurri tekniko eta antolakuntzako arrazoizkoak aplikatzen dira datuak babesteko. Politika hau aldatu daiteke legezko edo zerbitzu aldaketak islatzeko.</p>
+          </section>
+        </div>
+      </div>
     </main>
-      <script src="../page-transition.js" defer></script>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Vento Agency. Datu pertsonalen tratamendu arduratsua.</p>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="aviso-legal.html">Lege oharra</a>
+          <a href="privacidad.html">Pribatutasuna</a>
+          <a href="cookies.html">Cookieak</a>
+          <a href="blog.html">Bloga</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../page-transition.js" defer></script>
   </body>
 </html>
-
-
